@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+    <display-name>Jakarta Slide WebDAV Server</display-name>
+    <!-- Definition and configuration of servlet filters -->
+    <filter>
+        <filter-name>webdavlog</filter-name>
+        <filter-class>org.apache.slide.webdav.filter.LogFilter</filter-class>
+        <init-param>
+            <param-name>logFormat</param-name>
+            <param-value>%T, %t, %P, %m, %s "%l", %i, %p</param-value>
+            <description>
+                Defines the format of a log line.
+                The following placeholders are available: 
+                    %T=thread-name, 
+                    %t=date-time, 
+                    %P=principal-name, 
+                    %m=method-name, 
+                    %s=status-code, 
+                    %l=default-status-text, 
+                    %L=detailed-status-text, 
+                    %i=elapsed-time, 
+                    %p=relative-request-uri, 
+                    %u=request-uri.
+                    %x=request-content-length.
+                    %A=header User-Agent.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>outputToConsole</param-name>
+            <param-value>true</param-value>
+            <description>If true, output is directed to STDOUT.</description>
+        </init-param>
+        <init-param>
+            <param-name>outputToServletLog</param-name>
+            <param-value>false</param-value>
+            <description>If true, output is directed to the servlet's log file.</description>
+        </init-param>
+        <!--
+        <init-param>
+            <param-name>outputToFile</param-name>
+            <param-value>c:\webdav.log.xml</param-value>
+            <description>If present, output is directed to the specified file.</description>
+        </init-param>
+        -->
+    </filter>
+    <filter-mapping>
+        <filter-name>webdavlog</filter-name>
+        <servlet-name>webdav</servlet-name>
+    </filter-mapping>
+    <!-- Definition and configuration of Slide's WebDAV servlet. -->
+    <servlet>
+        <servlet-name>webdav</servlet-name>
+        <display-name>Slide DAV Server</display-name>
+        <servlet-class>org.apache.slide.webdav.WebdavServlet</servlet-class>
+        <init-param>
+            <param-name>domain</param-name>
+            <param-value>/Domain.xml</param-value>
+            <description>
+                Path to the domain configuration file, relative to the path of the
+                web application.
+                The default is '/Domain.xml'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>slide</param-value>
+            <description>
+                Name of the Slide namespace that should be accessed by this servlet.
+                If this parameter is provided, make sure the corresponding namespace
+                is defined in the domain configuration file. Otherwise, the default
+                namespace will be used, if one exists.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>scope</param-name>
+            <param-value/>
+            <description>
+                 Scope of the Slide namespace that should be exposed by this servlet.
+                 For example, if you want to expose only the /files collection via
+                 WebDAV, set this parameter to '/files'. In that case, any URLs of the
+                 form '/context-path/servlet-path/*' will be mapped to '/files/*'
+                 in the Slide namespace.
+                 The default value is an empty string.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>depth-limit</param-name>
+            <param-value>3</param-value>
+            <description>
+                 This init-parameter determines the depth limit for PROPFIND and other
+                 methods, to avoid performance hits on the server for requests with
+                 infinite depth.
+                 The default value is '3'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>default-mime-type</param-name>
+            <param-value>application/octet-stream</param-value>
+            <description>
+                The MIME type that should be used for resources of unknown type. For
+                example, if a WebDAV client uploads a file (via PUT) without specifying
+                the Content-Type header, the MIME type defined here will be used.
+                The default value is 'application/octet-stream'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>default-servlet</param-name>
+            <param-value>true</param-value>
+            <description>
+                By default, the WebDAV servlet is mapped as default servlet of the
+                web application context (the url-pattern in servlet-mapping is '/').
+                If you want to change that mapping so the servlet is no longer the
+                default servlet, you must change this initialization parameter to
+                indicate the situation to the servlet, by setting it to 'false'.
+                The default value is 'true'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>directory-browsing</param-name>
+            <param-value>true</param-value>
+            <description>
+                 Use the 'directory-browsing' init-parameter to turn off generation of
+                 HTML index pages that enable browsing of collections (by setting this
+                 parameter to 'false'), or to specify a web-app relative path to a
+                 template resource (a JSP page, for example) which should handle
+                 generation of the HTML index page. In the latter case, you can use a
+                 JSP page at WEB-INF/index.jsp by specifying '/WEB-INF/index.jsp' as
+                 value of this parameter.
+                 The default value is 'true'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>directory-browsing-hide-acl</param-name>
+            <param-value>true</param-value>
+            <description>
+                Use this parameter to hide ACL information in generated HTML index pages.
+                (see parameter "directory-browsing")
+                The default value is 'true'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>directory-browsing-hide-locks</param-name>
+            <param-value>true</param-value>
+            <description>
+                Use this parameter to hide locking information in generated HTML index pages.
+                (see parameter "directory-browsing")
+                The default value is 'true'.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>optimizePropfindOutput</param-name>
+            <param-value>true</param-value>
+            <description>
+                If set to false, the PropFindMethod will first create a (large) JDOM 
+                document in memory and then write it to the response stream. 
+                If set true, the PropFindMethod will write results to the stream as
+                soon as they are available. This will reduce memory consumption
+                in the case of large responses (PROPFIND on many resources).
+                The output of these two variants differ slightly, since in optimized 
+                mode the D:DAV namespace is declared in the multistatus element AND
+                in all response elements. Since this is still a valid XML document
+                it shouldn't be a problem, but in case you encounter any diffculties
+                this switch provides a way to get around it. 
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>extendedAllprop</param-name>
+            <param-value>false</param-value>
+            <description>
+            According to RFC3253 (DeltaV), RFCxxxx (ACL) and RFCxxxx (Binding),
+            a DAV:allprop PROPFIND should not return any of the properties defined
+            in any of that documents.
+            For testing purposes, the specified behaviour can be disabled by 
+            setting this parameter "true".
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>lockdiscoveryIncludesPrincipalURL</param-name>
+            <param-value>true</param-value>
+            <description>
+                As proposed on February 08, 2003 by Lisa Dusseault in 
+                w3c-dist-auth-request@w3.org, the DAV:lockdiscovery property should 
+                include an element DAV:principal-URL with the semantics of the 
+                WebDAV/ACL specification. This feature can be switched-off in case 
+                of interoperability problems.
+            </description>
+        </init-param>
+        <init-param>
+            <param-name>updateLastModified</param-name>
+            <param-value>true</param-value>
+            <description>
+                This parameter controls whether modifying properties via 
+                PROPPATCH causes the last modification date of the 
+                resource to be updated or not.
+            </description>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <!-- Uncomment this to get authentication -->
+        <security-role-ref>
+            <role-name>root</role-name>
+            <role-link>root</role-link>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>guest</role-name>
+            <role-link>guest</role-link>
+        </security-role-ref>
+        <security-role-ref>
+            <role-name>user</role-name>
+            <role-link>user</role-link>
+        </security-role-ref>
+    </servlet>
+    <!-- The mapping for the Slide WebDAV servlet.
+       If you change the mapping so that the servlet isn't the default servlet
+       anymore, make sure to set the init-parameter 'default-servlet' to
+       'false'. -->
+    <servlet-mapping>
+        <servlet-name>webdav</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <!-- Set the default session timeout (in minutes) -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <!-- Establish the default MIME type mappings -->
+    <mime-mapping>
+        <extension>txt</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>htm</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>gif</extension>
+        <mime-type>image/gif</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpg</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpe</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpeg</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>java</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>body</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rtx</extension>
+        <mime-type>text/richtext</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tsv</extension>
+        <mime-type>text/tab-separated-values</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>etx</extension>
+        <mime-type>text/x-setext</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ps</extension>
+        <mime-type>application/x-postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>class</extension>
+        <mime-type>application/java</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>csh</extension>
+        <mime-type>application/x-csh</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sh</extension>
+        <mime-type>application/x-sh</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tcl</extension>
+        <mime-type>application/x-tcl</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tex</extension>
+        <mime-type>application/x-tex</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>texinfo</extension>
+        <mime-type>application/x-texinfo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>texi</extension>
+        <mime-type>application/x-texinfo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>t</extension>
+        <mime-type>application/x-troff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tr</extension>
+        <mime-type>application/x-troff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>roff</extension>
+        <mime-type>application/x-troff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>man</extension>
+        <mime-type>application/x-troff-man</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>me</extension>
+        <mime-type>application/x-troff-me</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ms</extension>
+        <mime-type>application/x-wais-source</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>src</extension>
+        <mime-type>application/x-wais-source</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>zip</extension>
+        <mime-type>application/zip</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>bcpio</extension>
+        <mime-type>application/x-bcpio</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>cpio</extension>
+        <mime-type>application/x-cpio</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>gtar</extension>
+        <mime-type>application/x-gtar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>shar</extension>
+        <mime-type>application/x-shar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sv4cpio</extension>
+        <mime-type>application/x-sv4cpio</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sv4crc</extension>
+        <mime-type>application/x-sv4crc</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tar</extension>
+        <mime-type>application/x-tar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ustar</extension>
+        <mime-type>application/x-ustar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>dvi</extension>
+        <mime-type>application/x-dvi</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>hdf</extension>
+        <mime-type>application/x-hdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>latex</extension>
+        <mime-type>application/x-latex</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>bin</extension>
+        <mime-type>application/octet-stream</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>oda</extension>
+        <mime-type>application/oda</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pdf</extension>
+        <mime-type>application/pdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ps</extension>
+        <mime-type>application/postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>eps</extension>
+        <mime-type>application/postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ai</extension>
+        <mime-type>application/postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rtf</extension>
+        <mime-type>application/rtf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>nc</extension>
+        <mime-type>application/x-netcdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>cdf</extension>
+        <mime-type>application/x-netcdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>cer</extension>
+        <mime-type>application/x-x509-ca-cert</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>exe</extension>
+        <mime-type>application/octet-stream</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>gz</extension>
+        <mime-type>application/x-gzip</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>Z</extension>
+        <mime-type>application/x-compress</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>z</extension>
+        <mime-type>application/x-compress</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>hqx</extension>
+        <mime-type>application/mac-binhex40</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mif</extension>
+        <mime-type>application/x-mif</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ief</extension>
+        <mime-type>image/ief</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tiff</extension>
+        <mime-type>image/tiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tif</extension>
+        <mime-type>image/tiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ras</extension>
+        <mime-type>image/x-cmu-raster</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pnm</extension>
+        <mime-type>image/x-portable-anymap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pbm</extension>
+        <mime-type>image/x-portable-bitmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pgm</extension>
+        <mime-type>image/x-portable-graymap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ppm</extension>
+        <mime-type>image/x-portable-pixmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rgb</extension>
+        <mime-type>image/x-rgb</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xbm</extension>
+        <mime-type>image/x-xbitmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xpm</extension>
+        <mime-type>image/x-xpixmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xwd</extension>
+        <mime-type>image/x-xwindowdump</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>au</extension>
+        <mime-type>audio/basic</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>snd</extension>
+        <mime-type>audio/basic</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aif</extension>
+        <mime-type>audio/x-aiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aiff</extension>
+        <mime-type>audio/x-aiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aifc</extension>
+        <mime-type>audio/x-aiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>wav</extension>
+        <mime-type>audio/x-wav</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpeg</extension>
+        <mime-type>video/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpg</extension>
+        <mime-type>video/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpe</extension>
+        <mime-type>video/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>qt</extension>
+        <mime-type>video/quicktime</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mov</extension>
+        <mime-type>video/quicktime</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>avi</extension>
+        <mime-type>video/x-msvideo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>movie</extension>
+        <mime-type>video/x-sgi-movie</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>avx</extension>
+        <mime-type>video/x-rad-screenplay</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>wrl</extension>
+        <mime-type>x-world/x-vrml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpv2</extension>
+        <mime-type>video/mpeg2</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpg</extension>
+        <mime-type>image/pjpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sgml</extension>
+        <mime-type>text/sgml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sgm</extension>
+        <mime-type>text/sgml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>png</extension>
+        <mime-type>image/png</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>bmp</extension>
+        <mime-type>image/bmp</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpga</extension>
+        <mime-type>audio/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mp2</extension>
+        <mime-type>audio/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mp3</extension>
+        <mime-type>audio/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>application/x-javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xml</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xls</extension>
+        <mime-type>application/vnd.ms-excel</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ppt</extension>
+        <mime-type>application/vnd.ms-powerpoint</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>doc</extension>
+        <mime-type>application/msword</mime-type>
+    </mime-mapping>
+    <!-- Establish the default list of welcome files -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+    </welcome-file-list>
+    <!-- Authetication for the WebDAV servlet -->
+    <!-- Uncomment this to get authentication -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>DAV resource</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>COPY</http-method>
+            <http-method>DELETE</http-method>
+            <http-method>GET</http-method>
+            <http-method>HEAD</http-method>
+            <http-method>LOCK</http-method>
+            <http-method>MKCOL</http-method>
+            <http-method>MOVE</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>POST</http-method>
+            <http-method>PROPFIND</http-method>
+            <http-method>PROPPATCH</http-method>
+            <http-method>PUT</http-method>
+            <http-method>UNLOCK</http-method>
+            <http-method>VERSION-CONTROL</http-method>
+            <http-method>REPORT</http-method>
+            <http-method>CHECKIN</http-method>
+            <http-method>CHECKOUT</http-method>
+            <http-method>UNCHECKOUT</http-method>
+            <http-method>MKWORKSPACE</http-method>
+            <http-method>UPDATE</http-method>
+            <http-method>LABEL</http-method>
+            <http-method>MERGE</http-method>
+            <http-method>BASELINE-CONTROL</http-method>
+            <http-method>MKACTIVITY</http-method>
+            <http-method>ACL</http-method>
+            <http-method>SEARCH</http-method>
+            <http-method>BIND</http-method>
+            <http-method>UNBIND</http-method>
+            <http-method>REBIND</http-method>
+            <http-method>SUBSCRIBE</http-method>
+            <http-method>UNSUBSCRIBE</http-method>
+            <http-method>POLL</http-method>
+            <http-method>NOTIFY</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>root</role-name>
+            <role-name>guest</role-name>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Slide DAV Server</realm-name>
+    </login-config>
+    <security-role>
+        <role-name>root</role-name>
+    </security-role>
+    <security-role>
+        <role-name>guest</role-name>
+    </security-role>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+</web-app>
