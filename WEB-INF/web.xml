@@ -73,7 +73,7 @@
         <servlet-class>org.apache.slide.webdav.WebdavServlet</servlet-class>
         <init-param>
             <param-name>domain</param-name>
-            <param-value>/idegaweb/bundles/org.apache.slide.bundle/Domain.xml</param-value><!-- iw: changed from Domain.xml to 'bundlepath'/Domain.xml -->
+            <param-value>/idegaweb/bundles/org.apache.slide.bundle/properties/Domain.xml</param-value><!-- iw: changed from Domain.xml to 'bundlepath'/properties/Domain.xml -->
             <description>
                 Path to the domain configuration file, relative to the path of the
                 web application.

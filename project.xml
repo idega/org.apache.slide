@@ -3,7 +3,7 @@
   <pomVersion>3</pomVersion>
 	<extend>${base.project.dir}/base-project.xml</extend>
   <artifactId>org.apache.slide</artifactId>
-  <name>Slide</name>
+  <name>Apache Jakarta Slide</name>
   <groupId>bundles</groupId>
   <currentVersion>2.1</currentVersion>
   <organization />
@@ -291,24 +291,55 @@
       </properties>
     </dependency>
   </dependencies>
-  <build>
-    <sourceDirectory>src/java</sourceDirectory>
-    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
-    <unitTest>
-      <includes>
-        <include>**/*Test.java</include>
-      </includes>
-    </unitTest>
-    <resources>
-      <resource>
-       <directory>${basedir}/WEB-INF/classes</directory>
-        <includes>
-          <include>log4j.properties</include>
-          <include>slide.properties</include>
-        </includes>
-      </resource>
-    </resources>
-  </build>
-  <properties />
+    <!-- This build tag is mainly copied from base-project.xml until there is a better solution -->
+    <build>
+		<nagEmailAddress>tryggvi@idega.com</nagEmailAddress>
+        <sourceDirectory>src/java</sourceDirectory>
+        <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+        <unitTest>
+            <includes>
+                <include>**/*Test.java</include>
+            </includes>
+        </unitTest>
+	    <resources>
+	      <resource>
+	       <directory>${basedir}/resources</directory>
+	       <targetPath>resources</targetPath>
+	        <includes>
+	          <include>**/**</include>
+	        </includes>
+	      </resource>
+	      <resource>
+	       <directory>${basedir}/properties</directory>
+	       <targetPath>properties</targetPath>
+	        <includes>
+	          <include>**/**</include>
+	        </includes>
+	      </resource>
+	      <resource>
+	       <directory>${basedir}/WEB-INF</directory>
+	       <targetPath>WEB-INF</targetPath>
+	        <includes>
+	          <include>**/**</include>
+	        </includes>
+	      </resource>
+	      <!--specially including these property files so that they will end up on the root of the jar file -->
+	      <resource>
+	       <directory>${basedir}/WEB-INF/classes</directory>
+	        <includes>
+	          <include>log4j.properties</include>
+	          <include>slide.properties</include>
+	        </includes>
+	      </resource>
+	      <resource>
+	       <directory>${basedir}/jsp</directory>
+	       <targetPath>jsp</targetPath>
+	        <includes>
+	          <include>**/**</include>
+	        </includes>
+	      </resource>
+	    </resources>
+    </build> 
+  
 </project>
 
