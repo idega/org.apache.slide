@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <slide>
     <namespace name="slide">
-        <definition>
+        <!--<definition>
             <store name="tx">
                 <parameter name="tlock-timeout">120</parameter>
                 <nodestore classname="org.apache.slide.store.txfile.TxXMLFileDescriptorsStore">
@@ -31,16 +31,48 @@
                     <parameter name="defer-saving">true</parameter>
                     <parameter name="timeout">120</parameter>
                 </contentstore>
-                <!-- uncomment if you want to use the sample Indexer -->
+                --><!-- uncomment if you want to use the sample Indexer -->
                 <!-- be sure to have Lucene in your classpath             -->
                 <!--
                 <contentindexer classname="org.apache.slide.index.SampleTxtContainsIndexer">
                 <parameter name="indexpath">./index</parameter>
                 </contentindexer>
-        -->
+        --><!--
             </store>
             <scope match="/" store="tx"/>
-        </definition>
+        </definition>-->
+        
+        <definition>
+<store name="MySqlStore">
+  <nodestore classname="org.apache.slide.store.impl.rdbms.JDBCStore">
+    <parameter name="adapter">org.apache.slide.store.impl.rdbms.MySql41RDBMSAdapter</parameter>
+    <parameter name="driver">com.mysql.jdbc.Driver</parameter>
+    <parameter name="url">jdbc:mysql://localhost/slidetest9</parameter>
+    <parameter name="user">root</parameter>
+    <parameter name="dbcpPooling">true</parameter>
+    <parameter name="maxPooledConnections">10</parameter>
+    <parameter name="isolation">SERIALIZABLE</parameter>
+    <parameter name="compress">false</parameter>
+  </nodestore>
+  <contentstore>
+    <reference store="nodestore" />
+  </contentstore>
+  <securitystore>
+    <reference store="nodestore" />
+  </securitystore>
+  <lockstore>
+    <reference store="nodestore" />
+  </lockstore>
+  <revisiondescriptorsstore>
+    <reference store="nodestore" />
+  </revisiondescriptorsstore>
+  <revisiondescriptorstore>
+    <reference store="nodestore" />
+  </revisiondescriptorstore>
+ </store>
+ <scope match="/" store="MySqlStore"/>
+</definition>
+        
         <configuration>
             <!-- Actions mapping -->
             <read-object>/actions/read</read-object>
@@ -77,6 +109,10 @@
             <parameter name="sequential-mode">full</parameter>
             <!-- "false" lets all read-only methods be executed outside of transactions -->
             <parameter name="all-methods-in-transactions">true</parameter>
+            <!-- Setting this to true will force Slide to internally convert the username a user
+                 enters at login to lowercase. This is useful for users who can't be bothered
+                 with turning off their capslock key before logging in. -->
+            <parameter name="force-lowercase-login">false</parameter>
         </configuration>
         <data>
             <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/">

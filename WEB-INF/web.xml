@@ -3,7 +3,7 @@
 <web-app>
     <display-name>Jakarta Slide WebDAV Server</display-name>
     <!-- Definition and configuration of servlet filters -->
-	<!-- Changes made by idega have comment that contain 'iw:'-->
+    <!-- Changes made by idega have comment that contain 'iw:'-->
     <filter>
         <filter-name>webdavlog</filter-name>
         <filter-class>org.apache.slide.webdav.filter.LogFilter</filter-class>
@@ -45,10 +45,28 @@
         </init-param>
         -->
     </filter>
+    <!-- If you're operating Slide with an SSL connection and with authentication enabled
+         and you notice that Internet Explorer is unable to open some file types you may
+         want to uncomment the following filter and its associated filter-mapping. See the
+         javadoc for the NoCacheFilter class for a description of the problem and discussion
+         of the ramifications. -->
+    <!--
+    <filter>
+        <filter-name>nocache</filter-name>
+        <filter-class>org.apache.slide.webdav.filter.NoCacheFilter</filter-class>
+    </filter>
+    -->
+
     <filter-mapping>
         <filter-name>webdavlog</filter-name>
         <servlet-name>webdav</servlet-name>
     </filter-mapping>
+    <!--
+    <filter-mapping>
+        <filter-name>nocache</filter-name>
+        <servlet-name>webdav</servlet-name>
+    </filter-mapping>
+    -->
     <!-- Definition and configuration of Slide's WebDAV servlet. -->
     <servlet>
         <servlet-name>webdav</servlet-name>
@@ -56,7 +74,7 @@
         <servlet-class>org.apache.slide.webdav.WebdavServlet</servlet-class>
         <init-param>
             <param-name>domain</param-name>
-            <param-value>/Domain.xml</param-value>
+            <param-value>/idegaweb/bundles/org.apache.slide.bundle/Domain.xml</param-value><!-- iw: changed from Domain.xml to 'bundlepath'/Domain.xml -->
             <description>
                 Path to the domain configuration file, relative to the path of the
                 web application.
@@ -202,7 +220,7 @@
         </init-param>
         <!-- <load-on-startup>1</load-on-startup>  iw: commented out-->
         <!-- Uncomment this to get authentication -->
-        <security-role-ref>
+        <!--security-role-ref>
             <role-name>root</role-name>
             <role-link>root</role-link>
         </security-role-ref>
@@ -213,15 +231,37 @@
         <security-role-ref>
             <role-name>user</role-name>
             <role-link>user</role-link>
-        </security-role-ref>
+        </security-role-ref!-->
     </servlet>
     <!-- The mapping for the Slide WebDAV servlet.
        If you change the mapping so that the servlet isn't the default servlet
        anymore, make sure to set the init-parameter 'default-servlet' to
        'false'. -->
+    <!-- iw: commented out <servlet-mapping>
+        <servlet-name>webdav</servlet-name>
+        <url-pattern>/webdav</url-pattern> --><!-- iw: chaged form / to /webdav--><!--
+    </servlet-mapping> -->
+    <!-- iw: added new mapping -->
+    <servlet-mapping>
+      <servlet-name>webdav</servlet-name>
+      <url-pattern>/servlet/webdav</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>webdav</servlet-name>
+      <url-pattern>/servlet/webdav/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>webdav</servlet-name>
+      <url-pattern>/servlet/webdav/*</url-pattern>
+    </servlet-mapping>
+    <!-- iw: added new mapping ends -->
+    
+    <!-- For some app servers (Tomcat)
+         .jsp files must be mapped
+         explicitly -->
     <servlet-mapping>
         <servlet-name>webdav</servlet-name>
-        <url-pattern>/webdav</url-pattern> <!-- iw: chaged form / to /webdav-->
+        <url-pattern>*.jsp</url-pattern> <!-- iw: changed from *.jsp to /servlet/webdav/*.jsp -->
     </servlet-mapping>
     <!-- Set the default session timeout (in minutes) -->
     <session-config>
@@ -624,10 +664,10 @@
     </welcome-file-list>
     <!-- Authetication for the WebDAV servlet -->
     <!-- Uncomment this to get authentication -->
-    <security-constraint>
+    <!--security-constraint>
         <web-resource-collection>
             <web-resource-name>DAV resource</web-resource-name>
-            <url-pattern>/webdav*</url-pattern> <!-- iw: changed from /* to /webdav*-->
+            <url-pattern>/servlet/webdav*</url-pattern> --><!-- iw: changed from /* to /servlet/webdav*--><!--
             <http-method>COPY</http-method>
             <http-method>DELETE</http-method>
             <http-method>GET</http-method>
@@ -680,5 +720,5 @@
     </security-role>
     <security-role>
         <role-name>user</role-name>
-    </security-role>
+    </security-role!-->
 </web-app>
