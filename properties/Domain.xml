@@ -72,34 +72,9 @@
        <parameter name="indexpath">store/index/metadata</parameter>
        
        <configuration name="indexed-properties">
-	       <property name="author" namespace="http://xmlns.idega.com/com.idega.block.article">
+	       <property name="ContentType" namespace="IW:">
 	        <text/>
 	      </property>
-	      
-	      <property name="headline" namespace="http://xmlns.idega.com/com.idega.block.article">
-	        <text/>
-	      </property>
-	      
-	      <property name="teaser" namespace="http://xmlns.idega.com/com.idega.block.article">
-	        <text/>
-	      </property>
-	      
-	      <property name="body" namespace="http://xmlns.idega.com/com.idega.block.article">
-	        <text/>
-	      </property>
-	      
-	      <property name="author" namespace="http://xmlns.idega.com/com.idega.block.article">
-	        <text/>
-	      </property>
-	      
-	      <property name="source" namespace="http://xmlns.idega.com/com.idega.block.article">
-	        <text/>
-	      </property>
-	      
-	      <property name="comment" namespace="http://xmlns.idega.com/com.idega.block.article">
-	        <text/>
-	      </property>
-      
        </configuration>
   </propertiesindexer>
   
@@ -398,12 +373,12 @@
     		<!--XML extractors-->
         <extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
             <configuration>
-                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="headline" xpath="/article/headline" />
-                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="teaser" xpath="/article/teaser" />
-                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="body" xpath="/article/body" />
-                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="author" xpath="/article/author" />
-                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="source" xpath="/article/source" />
-                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="comment" xpath="/article/comment" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="headline" xpath="/article/headline" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="teaser" xpath="/article/teaser" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="body" xpath="/article/body" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="author" xpath="/article/author" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="source" xpath="/article/source" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="comment" xpath="/article/comment" />
             </configuration>
         </extractor>
         <extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files"/>
