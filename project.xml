@@ -299,6 +299,12 @@
         <include>**/*Test.java</include>
       </includes>
     </unitTest>
+    <resource>
+     <directory>${basedir}</directory>
+     <includes>
+       <include>**/*.properties</include>
+     </includes>
+   </resource>
   </build>
   <properties />
 </project>
