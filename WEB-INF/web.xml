@@ -92,7 +92,7 @@
         </init-param>
         <init-param>
             <param-name>scope</param-name>
-            <param-value/>
+            <param-value/><!-- /files</param-value>  iw: changed from <param-value/> to /files -->
             <description>
                  Scope of the Slide namespace that should be exposed by this servlet.
                  For example, if you want to expose only the /files collection via
@@ -217,7 +217,7 @@
                 resource to be updated or not.
             </description>
         </init-param>
-        <!-- <load-on-startup>1</load-on-startup>  iw: commented out-->
+        <load-on-startup>2</load-on-startup>
         <!-- Uncomment this to get authentication -->
         <!--security-role-ref>
             <role-name>root</role-name>
@@ -230,7 +230,7 @@
         <security-role-ref>
             <role-name>user</role-name>
             <role-link>user</role-link>
-        </security-role-ref!-->
+        </security-role-ref-->
     </servlet>
     <!-- The mapping for the Slide WebDAV servlet.
        If you change the mapping so that the servlet isn't the default servlet
@@ -254,14 +254,15 @@
       <url-pattern>/servlet/webdav/*</url-pattern>
     </servlet-mapping>
     <!-- iw: added new mapping ends -->
-    
+
     <!-- For some app servers (Tomcat)
          .jsp files must be mapped
          explicitly -->
-    <!--<servlet-mapping>
+    <!--servlet-mapping>
         <servlet-name>webdav</servlet-name>
         <url-pattern>/servlet/webdav/*.jsp</url-pattern> --><!-- iw: changed from *.jsp to /servlet/webdav/*.jsp --><!--
-    </servlet-mapping>-->
+    </servlet-mapping-->
+    
     <!-- Establish the default MIME type mappings -->
     <mime-mapping>
         <extension>txt</extension>
@@ -652,17 +653,17 @@
         <mime-type>application/msword</mime-type>
     </mime-mapping>
     <!-- Establish the default list of welcome files -->
-    <welcome-file-list>
+    <!-- iw: no need to provide this in this module welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
-    </welcome-file-list>
+    </welcome-file-list-->
     <!-- Authetication for the WebDAV servlet -->
     <!-- Uncomment this to get authentication -->
     <!--security-constraint>
         <web-resource-collection>
             <web-resource-name>DAV resource</web-resource-name>
-            <url-pattern>/servlet/webdav*</url-pattern> --><!-- iw: changed from /* to /servlet/webdav*--><!--
+            <url-pattern>/*</url-pattern>
             <http-method>COPY</http-method>
             <http-method>DELETE</http-method>
             <http-method>GET</http-method>
@@ -715,5 +716,5 @@
     </security-role>
     <security-role>
         <role-name>user</role-name>
-    </security-role!-->
+    </security-role-->
 </web-app>
