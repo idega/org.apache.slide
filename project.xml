@@ -185,9 +185,6 @@
 	      <version>2.5-final-20040428</version>
 	      <type>jar</type>
 	      <url>http://jakarta.apache.org/poi/</url>
-	      <properties>
-	        <idegaweb.bundle.include>true</idegaweb.bundle.include>
-	      </properties>
 		</dependency>
 		<!-- part of jaxen now
 		<dependency>
