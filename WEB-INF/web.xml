@@ -3,6 +3,7 @@
 <web-app>
     <display-name>Jakarta Slide WebDAV Server</display-name>
     <!-- Definition and configuration of servlet filters -->
+	<!-- Changes made by idega have comment that contain 'iw:'-->
     <filter>
         <filter-name>webdavlog</filter-name>
         <filter-class>org.apache.slide.webdav.filter.LogFilter</filter-class>
@@ -106,7 +107,7 @@
         </init-param>
         <init-param>
             <param-name>default-servlet</param-name>
-            <param-value>true</param-value>
+            <param-value>false</param-value><!-- iw: changed from true to false -->
             <description>
                 By default, the WebDAV servlet is mapped as default servlet of the
                 web application context (the url-pattern in servlet-mapping is '/').
@@ -181,7 +182,7 @@
         </init-param>
         <init-param>
             <param-name>lockdiscoveryIncludesPrincipalURL</param-name>
-            <param-value>true</param-value>
+            <param-value>false</param-value> <!-- iw: changed from true to false. This is set to false because of error in the webdav client on MacOSX-->
             <description>
                 As proposed on February 08, 2003 by Lisa Dusseault in 
                 w3c-dist-auth-request@w3.org, the DAV:lockdiscovery property should 
@@ -199,7 +200,7 @@
                 resource to be updated or not.
             </description>
         </init-param>
-        <load-on-startup>1</load-on-startup>
+        <!-- <load-on-startup>1</load-on-startup>  iw: commented out-->
         <!-- Uncomment this to get authentication -->
         <security-role-ref>
             <role-name>root</role-name>
@@ -220,7 +221,7 @@
        'false'. -->
     <servlet-mapping>
         <servlet-name>webdav</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/webdav</url-pattern> <!-- iw: chaged form / to /webdav-->
     </servlet-mapping>
     <!-- Set the default session timeout (in minutes) -->
     <session-config>
@@ -626,7 +627,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>DAV resource</web-resource-name>
-            <url-pattern>/*</url-pattern>
+            <url-pattern>/webdav*</url-pattern> <!-- iw: changed from /* to /webdav*-->
             <http-method>COPY</http-method>
             <http-method>DELETE</http-method>
             <http-method>GET</http-method>
