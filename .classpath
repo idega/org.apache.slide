@@ -57,4 +57,5 @@
   </classpathentry>
   <classpathentry kind="output" path="target/classes">
   </classpathentry>
+   <classpathentry kind="lib" path="WEB-INF/classes"/>
 </classpath>
