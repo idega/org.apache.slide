@@ -330,7 +330,7 @@
     <parameter name="workspacepath">/workspace</parameter>
     <parameter name="workingresourcepath">/workingresource</parameter>
     <parameter name="auto-version">checkout-checkin</parameter>
-    <parameter name="auto-version-control">false</parameter>
+    <parameter name="auto-version-control">true</parameter>
     <parameter name="versioncontrol-exclude"/>
     <parameter name="checkout-fork">forbidden</parameter>
     <parameter name="checkin-fork">forbidden</parameter>
