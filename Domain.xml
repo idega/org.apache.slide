@@ -47,7 +47,7 @@
   <nodestore classname="org.apache.slide.store.impl.rdbms.JDBCStore">
     <parameter name="adapter">org.apache.slide.store.impl.rdbms.MySql41RDBMSAdapter</parameter>
     <parameter name="driver">com.mysql.jdbc.Driver</parameter>
-    <parameter name="url">jdbc:mysql://localhost/slidetest9</parameter>
+    <parameter name="url">jdbc:mysql://localhost/slidetest9?useUnicode=true&characterEncoding=UTF-8</parameter>
     <parameter name="user">root</parameter>
     <parameter name="dbcpPooling">true</parameter>
     <parameter name="maxPooledConnections">10</parameter>
