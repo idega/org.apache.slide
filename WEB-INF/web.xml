@@ -66,7 +66,7 @@
         <servlet-name>webdav</servlet-name>
     </filter-mapping>
     -->
-    <!-- Definition and configuration of Slide's WebDAV servlet. -->
+    <!-- Definition and configuration of Slide's WebDAV servlet mapped to scope /files -->
     <servlet>
         <servlet-name>webdav</servlet-name>
         <display-name>Slide DAV Server</display-name>
@@ -92,7 +92,7 @@
         </init-param>
         <init-param>
             <param-name>scope</param-name>
-            <param-value/><!-- /files</param-value>  iw: changed from <param-value/> to /files -->
+            <param-value/>
             <description>
                  Scope of the Slide namespace that should be exposed by this servlet.
                  For example, if you want to expose only the /files collection via
@@ -243,15 +243,15 @@
     <!-- iw: added new mapping -->
     <servlet-mapping>
       <servlet-name>webdav</servlet-name>
-      <url-pattern>/servlet/webdav</url-pattern>
+      <url-pattern>/content</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
       <servlet-name>webdav</servlet-name>
-      <url-pattern>/servlet/webdav/</url-pattern>
+      <url-pattern>/content/</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
       <servlet-name>webdav</servlet-name>
-      <url-pattern>/servlet/webdav/*</url-pattern>
+      <url-pattern>/content/*</url-pattern>
     </servlet-mapping>
     <!-- iw: added new mapping ends -->
 
@@ -260,7 +260,7 @@
          explicitly -->
     <!--servlet-mapping>
         <servlet-name>webdav</servlet-name>
-        <url-pattern>/servlet/webdav/*.jsp</url-pattern> --><!-- iw: changed from *.jsp to /servlet/webdav/*.jsp --><!--
+        <url-pattern>/content/*.jsp</url-pattern> --><!-- iw: changed from *.jsp to /content/*.jsp --><!--
     </servlet-mapping-->
     
     <!-- Establish the default MIME type mappings -->
