@@ -64,6 +64,45 @@
   <revisiondescriptorstore>
     <reference store="nodestore" />
   </revisiondescriptorstore>
+  
+   <contentindexer classname="org.apache.slide.index.lucene.LuceneContentIndexer">
+       <parameter name="indexpath">store/index/content</parameter>
+  </contentindexer>
+   <propertiesindexer classname="org.apache.slide.index.lucene.LucenePropertiesIndexer">
+       <parameter name="indexpath">store/index/metadata</parameter>
+       
+       <configuration name="indexed-properties">
+	       <property name="author" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+	      
+	      <property name="headline" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+	      
+	      <property name="teaser" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+	      
+	      <property name="body" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+	      
+	      <property name="author" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+	      
+	      <property name="source" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+	      
+	      <property name="comment" namespace="http://xmlns.idega.com/com.idega.block.article">
+	        <text/>
+	      </property>
+      
+       </configuration>
+  </propertiesindexer>
+  
  </store>
  <scope match="/" store="IWStore"/>
 </definition>
@@ -356,18 +395,40 @@
 
     <!-- Extractor configuration -->
     <extractors>
-        <extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files/articles/test.xml">
+    		<!--XML extractors-->
+        <extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
             <configuration>
-                <instruction property="title" xpath="/article/title/text()" />
-                <instruction property="summary" xpath="/article/summary/text()" />
+                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="headline" xpath="/article/headline" />
+                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="teaser" xpath="/article/teaser" />
+                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="body" xpath="/article/body" />
+                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="author" xpath="/article/author" />
+                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="source" xpath="/article/source" />
+                <instruction namespace="http://xmlns.idega.com/com.idega.block.article" property="comment" xpath="/article/comment" />
             </configuration>
         </extractor>
-        <extractor classname="org.apache.slide.extractor.OfficeExtractor" uri="/files/docs/">
+        <extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files"/>
+        <!--XML extractors-->
+        
+        <!--PDF extractors-->
+        <extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files" />
+        <!--PDF extractors-->
+                
+        <!--Text extractors-->
+        <extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files" />
+        <!--Text extractors-->
+                
+        <!--Office extractors-->
+        <extractor classname="org.apache.slide.extractor.OfficeExtractor" uri="/files">
             <configuration>
                 <instruction property="author" id="SummaryInformation-0-4" />
                 <instruction property="application" id="SummaryInformation-0-18" />
             </configuration>
         </extractor>
+        <extractor classname="org.apache.slide.extractor.MSWordExtractor" uri="/files"/>
+        <extractor classname="org.apache.slide.extractor.MSExcelExtractor" uri="/files"/>
+        <extractor classname="org.apache.slide.extractor.MSPowerPointExtractor" uri="/files"/>
+        <!--Office extractors-->
+        
     </extractors>
 
     <!-- Event configuration -->
@@ -392,7 +453,7 @@
         <listener classname="org.apache.slide.extractor.PropertyExtractorTrigger" />
         <listener classname="org.apache.slide.search.IndexTrigger">
             <configuration>
-                <indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/articles" />
+                <indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/" />
             </configuration>
         </listener>
         
