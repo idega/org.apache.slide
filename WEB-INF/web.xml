@@ -136,7 +136,7 @@
         </init-param>
         <init-param>
             <param-name>directory-browsing</param-name>
-            <param-value>true</param-value>
+            <param-value>false</param-value>
             <description>
                  Use the 'directory-browsing' init-parameter to turn off generation of
                  HTML index pages that enable browsing of collections (by setting this
