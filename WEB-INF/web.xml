@@ -259,14 +259,10 @@
     <!-- For some app servers (Tomcat)
          .jsp files must be mapped
          explicitly -->
-    <servlet-mapping>
+    <!--<servlet-mapping>
         <servlet-name>webdav</servlet-name>
-        <url-pattern>*.jsp</url-pattern> <!-- iw: changed from *.jsp to /servlet/webdav/*.jsp -->
-    </servlet-mapping>
-    <!-- Set the default session timeout (in minutes) -->
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
+        <url-pattern>/servlet/webdav/*.jsp</url-pattern> --><!-- iw: changed from *.jsp to /servlet/webdav/*.jsp --><!--
+    </servlet-mapping>-->
     <!-- Establish the default MIME type mappings -->
     <mime-mapping>
         <extension>txt</extension>
