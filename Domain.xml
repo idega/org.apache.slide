@@ -93,8 +93,11 @@
             <!-- Paths configuration -->
             <userspath>/users</userspath>
             <rolespath>/roles</rolespath>
+            <groupspath>/groups</groupspath>
             <actionspath>/actions</actionspath>
             <filespath>/files</filespath>
+			<auto-create-users>true</auto-create-users>
+			<auto-create-users-role>slideroles.basic.RootRoleImpl</auto-create-users-role>
             <parameter name="dav">true</parameter>
             <parameter name="standalone">true</parameter>
             <parameter name="acl_inheritance_type">path</parameter>
@@ -108,6 +111,8 @@
                  enters at login to lowercase. This is useful for users who can't be bothered
                  with turning off their capslock key before logging in. -->
             <parameter name="force-lowercase-login">false</parameter>
+            <parameter name="auto-create-users">true</parameter>
+			<parameter name="auto-create-users-role">slideroles.basic.RootRoleImpl</parameter>
         </configuration>
         <data>
             <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/">
