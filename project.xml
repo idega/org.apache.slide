@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project>
   <pomVersion>3</pomVersion>
-	<extend>${base.project.dir}/base-project.xml</extend>
+  <extend>${base.project.dir}/base-project.xml</extend>
   <artifactId>org.apache.slide</artifactId>
   <name>Apache Jakarta Slide</name>
   <groupId>bundles</groupId>
   <currentVersion>2.2pre1.iwbuild3</currentVersion>
-  <organization />
+  <organization/>
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
   <shortDescription>Jakarta Slide WebDAV Server</shortDescription>
   <issueTrackingUrl>http://issues.idega.is</issueTrackingUrl>
   <versions>
-      <version>
+    <version>
       <id>2.2pre1.iwbuild3</id>
       <name>2.2pre1.iwbuild3</name>
-      <tag>APACHE_SLIDE_2.2pre1.iwbuild3</tag>
+      <tag>APACHE_SLIDE_2_2_pre1_iwbuild3</tag>
     </version>
   </versions>
   <developers>
@@ -34,15 +35,18 @@
   </developers>
   <dependencies>
     <!-- JDom -->
+
     <dependency>
       <groupId>jdom</groupId>
       <artifactId>jdom</artifactId>
       <version>1.0</version>
       <!-- jdom-20040226-.jar -->
+
       <type>jar</type>
       <url>http://www.jdom.org/</url>
     </dependency>
     <!-- ServletAPI -->
+
     <dependency>
       <groupId>servletapi</groupId>
       <artifactId>servletapi</artifactId>
@@ -51,6 +55,7 @@
       <url>http://java.sun.com/products/servlet/docs.html</url>
     </dependency>
     <!-- Commons -->
+
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
@@ -118,7 +123,7 @@
         <idegaweb.bundle.include>true</idegaweb.bundle.include>
       </properties>
     </dependency>
-        <dependency>
+    <dependency>
       <groupId>ojb</groupId>
       <artifactId>db-ojb</artifactId>
       <version>1.0.1</version>
@@ -129,12 +134,14 @@
       </properties>
     </dependency>
     <!-- -->
+
     <dependency>
       <groupId>ehcache</groupId>
       <artifactId>ehcache</artifactId>
       <!--
             <version>0.8</version>
             -->
+
       <version>1.1</version>
       <type>jar</type>
       <url>http://ehcache.sourceforge.net/</url>
@@ -148,6 +155,7 @@
       <version>1.0-FCS</version>
       <jar>jaxen-1.0-FCS-full.jar</jar>
       <!-- jaxen-core.jar jaxen-jdom.jar -->
+
       <type>jar</type>
       <url>http://jaxen.codehaus.org/</url>
       <properties>
@@ -155,6 +163,7 @@
       </properties>
     </dependency>
     <!-- -->
+
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -194,6 +203,7 @@
     <!-- saxpath is a part of jaxen now but has another package name -->
     <!-- Slide -->
     <!--  -->
+
     <dependency>
       <groupId>tm-extractors</groupId>
       <artifactId>tm-extractors</artifactId>
@@ -315,55 +325,55 @@
       </properties>
     </dependency>
   </dependencies>
-    <!-- This build tag is mainly copied from base-project.xml until there is a better solution -->
-    <build>
-		<nagEmailAddress>tryggvi@idega.com</nagEmailAddress>
-        <sourceDirectory>src/java</sourceDirectory>
-        <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
-        <unitTest>
-            <includes>
-                <include>**/*Test.java</include>
-            </includes>
-        </unitTest>
-	    <resources>
-	      <resource>
-	       <directory>${basedir}/resources</directory>
-	       <targetPath>resources</targetPath>
-	        <includes>
-	          <include>**/**</include>
-	        </includes>
-	      </resource>
-	      <resource>
-	       <directory>${basedir}/properties</directory>
-	       <targetPath>properties</targetPath>
-	        <includes>
-	          <include>**/**</include>
-	        </includes>
-	      </resource>
-	      <resource>
-	       <directory>${basedir}/WEB-INF</directory>
-	       <targetPath>WEB-INF</targetPath>
-	        <includes>
-	          <include>**/**</include>
-	        </includes>
-	      </resource>
-	      <!--specially including these property files so that they will end up on the root of the jar file -->
-	      <resource>
-	       <directory>${basedir}/WEB-INF/classes</directory>
-	        <includes>
-	          <include>log4j.properties</include>
-	          <include>slide.properties</include>
-	        </includes>
-	      </resource>
-	      <resource>
-	       <directory>${basedir}/jsp</directory>
-	       <targetPath>jsp</targetPath>
-	        <includes>
-	          <include>**/**</include>
-	        </includes>
-	      </resource>
-	    </resources>
-    </build> 
-  
-</project>
+  <!-- This build tag is mainly copied from base-project.xml until there is a better solution -->
 
+  <build>
+    <nagEmailAddress>tryggvi@idega.com</nagEmailAddress>
+    <sourceDirectory>src/java</sourceDirectory>
+    <unitTestSourceDirectory>src/test</unitTestSourceDirectory>
+    <unitTest>
+      <includes>
+        <include>**/*Test.java</include>
+      </includes>
+    </unitTest>
+    <resources>
+      <resource>
+        <directory>${basedir}/resources</directory>
+        <targetPath>resources</targetPath>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/properties</directory>
+        <targetPath>properties</targetPath>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/WEB-INF</directory>
+        <targetPath>WEB-INF</targetPath>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+      <!--specially including these property files so that they will end up on the root of the jar file -->
+
+      <resource>
+        <directory>${basedir}/WEB-INF/classes</directory>
+        <includes>
+          <include>log4j.properties</include>
+          <include>slide.properties</include>
+        </includes>
+      </resource>
+      <resource>
+        <directory>${basedir}/jsp</directory>
+        <targetPath>jsp</targetPath>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+</project>
