@@ -142,7 +142,7 @@
                         </revision>
                     </objectnode>
                     <!-- /users/john and /users/john2 represent authenticated users -->
-                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/users/john">
+                    <!--objectnode classname="org.apache.slide.structure.SubjectNode" uri="/users/john">
                         <revision>
                             <property namespace="http://jakarta.apache.org/slide/" name="password">john</property> 
                         </revision>
@@ -152,7 +152,7 @@
                             <property namespace="http://jakarta.apache.org/slide/" name="password">john2</property> 
                         </revision>
                     </objectnode>
-                    <!-- /users/guest represents an authenticated or unauthenticated guest user -->
+                    --><!-- /users/guest represents an authenticated or unauthenticated guest user --><!--
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/users/guest">
                         <revision>
                             <property namespace="http://jakarta.apache.org/slide/" name="password">guest</property> 
@@ -162,7 +162,7 @@
                         <revision>
                             <property namespace="http://jakarta.apache.org/slide/" name="password">projector</property> 
                         </revision>
-                    </objectnode>
+                    </objectnode-->
                 </objectnode>
                 <!-- /roles -->
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/roles">
@@ -175,20 +175,20 @@
                         </revision>
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/roles/user">
-                        <revision>
+                        <!--revision>
                             <property name="group-member-set"><![CDATA[<D:href xmlns:D='DAV:'>/users/john</D:href><D:href xmlns:D='DAV:'>/users/john2</D:href><D:href xmlns:D='DAV:'>/users/root</D:href><D:href xmlns:D='DAV:'>/users/projector</D:href>]]></property>
-                        </revision>
+                        </revision-->
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/roles/guest">
-                        <revision>
+                        <!--revision>
                             <property name="group-member-set"><![CDATA[<D:href xmlns:D='DAV:'>/users/guest</D:href>]]></property>
-                        </revision>
+                        </revision-->
                     </objectnode>
-                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/roles/projector">
+                    <!--objectnode classname="org.apache.slide.structure.SubjectNode" uri="/roles/projector">
                         <revision>
                             <property name="group-member-set"><![CDATA[<D:href xmlns:D='DAV:'>/users/root</D:href><D:href xmlns:D='DAV:'>/users/projector</D:href>]]></property>
                         </revision>
-                    </objectnode>
+                    </objectnode-->
                 </objectnode>
                 <!-- action -->
                 <objectnode classname="org.apache.slide.structure.ActionNode" uri="/actions">
@@ -248,13 +248,13 @@
                     <permission action="/actions/write" subject="/roles/user" inheritable="true"/>
                     <permission action="/actions/read-acl" subject="owner" inheritable="true"/>
                 </objectnode>
-                <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/projector">
+                <!--objectnode classname="org.apache.slide.structure.SubjectNode" uri="/projector">
                     <permission action="all" subject="unauthenticated" inheritable="true"/>
                     <permission action="/actions/write" subject="/roles/projector" inheritable="true"/>
                     <permission action="/actions/read-acl" subject="owner" inheritable="true"/>
 	                <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/projector/work">
 	                </objectnode>
-                </objectnode>
+                </objectnode-->
                 <!-- DeltaV: default history and workspace paths -->
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/history">
                     <permission action="all" subject="unauthenticated" inheritable="true"/>

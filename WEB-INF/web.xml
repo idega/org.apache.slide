@@ -199,13 +199,13 @@
         </init-param>
         <init-param>
             <param-name>lockdiscoveryIncludesPrincipalURL</param-name>
-            <param-value>false</param-value> <!-- iw: changed from true to false. This is set to false because of error in the webdav client on MacOSX-->
+            <param-value>false</param-value>
             <description>
                 As proposed on February 08, 2003 by Lisa Dusseault in 
                 w3c-dist-auth-request@w3.org, the DAV:lockdiscovery property should 
                 include an element DAV:principal-URL with the semantics of the 
-                WebDAV/ACL specification. This feature can be switched-off in case 
-                of interoperability problems.
+                WebDAV/ACL specification. This feature is switched-off
+        by default as it lead to compatibility problems with MacOS X client.
             </description>
         </init-param>
         <init-param>
