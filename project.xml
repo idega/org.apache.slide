@@ -11,7 +11,6 @@
   <description>Jakarta Slide WebDAV Server</description>
   <shortDescription>Jakarta Slide WebDAV Server</shortDescription>
   <issueTrackingUrl>http://issues.idega.is</issueTrackingUrl>
-  <repository />
   <developers>
     <developer>
       <name>Tryggvi Larusson</name>
