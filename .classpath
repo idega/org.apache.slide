@@ -8,7 +8,7 @@
 	<classpathentry kind="var" path="MAVEN_REPO/commons-dbcp/jars/commons-dbcp-1.2.1.jar"/>
 	<classpathentry kind="var" path="MAVEN_REPO/commons-pool/jars/commons-pool-1.1.jar"/>
 	<classpathentry kind="var" path="MAVEN_REPO/commons-transaction/jars/commons-transaction-20040805.jar"/>
-	<classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-1.0.jar"/>
+	<classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-2.0.jar"/>
 	<classpathentry kind="var" path="MAVEN_REPO/ehcache/jars/ehcache-0.9.jar"/>
 	<classpathentry kind="var" path="MAVEN_REPO/jaxen/jars/jaxen-1.0-FCS-full.jar"/>
 	<classpathentry kind="var" path="MAVEN_REPO/log4j/jars/log4j-1.2.8.jar"/>
@@ -28,6 +28,5 @@
 	<classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-stores-2.1b2.jar"/>
 	<classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-webdavservlet-2.1b2.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/classes"/>
-	<classpathentry kind="var" path="Slide-share"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
