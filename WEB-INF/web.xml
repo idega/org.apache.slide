@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
-    <display-name>Jakarta Slide WebDAV Server</display-name>
     <!-- Definition and configuration of servlet filters -->
     <!-- Changes made by idega have comment that contain 'iw:'-->
     <filter>
