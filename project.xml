@@ -5,7 +5,7 @@
   <artifactId>org.apache.slide</artifactId>
   <name>Apache Jakarta Slide</name>
   <groupId>bundles</groupId>
-  <currentVersion>2.2pre1</currentVersion>
+  <currentVersion>2.2pre2</currentVersion>
   <organization />
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
@@ -230,7 +230,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>jakarta-slide-webdavlib</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -240,7 +240,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-jaas</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -250,7 +250,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-jdk14logger</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -260,7 +260,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-kernel</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -270,7 +270,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-log4jlogger</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -280,7 +280,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-roles</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -290,7 +290,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-stores</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
@@ -300,7 +300,7 @@
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-webdavservlet</artifactId>
-      <version>2.2pre1</version>
+      <version>2.2pre2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
       <properties>
