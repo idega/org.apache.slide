@@ -299,12 +299,14 @@
         <include>**/*Test.java</include>
       </includes>
     </unitTest>
-    <resource>
-     <directory>${basedir}</directory>
-     <includes>
-       <include>**/*.properties</include>
-     </includes>
-   </resource>
+    <resources>
+      <resource>
+       <directory>${basedir}</directory>
+        <includes>
+          <include>log4j.properties</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
   <properties />
 </project>
