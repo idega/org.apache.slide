@@ -43,15 +43,10 @@
         </definition>-->
         
         <definition>
-<store name="MySqlStore">
-  <nodestore classname="org.apache.slide.store.impl.rdbms.JDBCStore">
-    <parameter name="adapter">org.apache.slide.store.impl.rdbms.MySql41RDBMSAdapter</parameter>
-    <parameter name="driver">com.mysql.jdbc.Driver</parameter>
-    <parameter name="url">jdbc:mysql://localhost/slidetest9?useUnicode=true&characterEncoding=UTF-8</parameter>
-    <parameter name="user">root</parameter>
+<store name="IWStore">
+  <nodestore classname="com.idega.slide.store.IWSlideJDBCStore">
     <parameter name="dbcpPooling">true</parameter>
-    <parameter name="maxPooledConnections">10</parameter>
-    <parameter name="isolation">SERIALIZABLE</parameter>
+    <!--<parameter name="isolation">SERIALIZABLE</parameter> iw: not secure if using Oracle -->
     <parameter name="compress">false</parameter>
   </nodestore>
   <contentstore>
@@ -70,7 +65,7 @@
     <reference store="nodestore" />
   </revisiondescriptorstore>
  </store>
- <scope match="/" store="MySqlStore"/>
+ <scope match="/" store="IWStore"/>
 </definition>
         
         <configuration>
