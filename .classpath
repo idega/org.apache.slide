@@ -17,7 +17,7 @@
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/commons-transaction/jars/commons-transaction-1.1b2pre.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-2.0.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-2.0.2.jar">
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/commons-xmlio/jars/commons-xmlio-0.1pre.jar">
   </classpathentry>
