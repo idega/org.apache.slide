@@ -5,7 +5,6 @@ the eclipse tomcat plugin:
 
 <classpathentry kind="lib" path="WEB-INF/classes"/>
 
-
 ----------------------------------
 
 To use slide you first need, at the moment, to run one db-schema on your database.
