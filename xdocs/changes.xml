@@ -1,0 +1,15 @@
+<document>
+  <properties>
+    <title>Org Apache Slide changes</title>
+    <author email="tryggvi@idega.com">Tryggvi Larusson</author>
+  </properties>
+  <body>
+  
+    <release version="2.2pre1.iwbuild3" date="2005-03-10">
+      <action dev="tryggvil" type="update">
+        Declaration of version for use with core 3.0.0
+      </action>              
+    </release>
+
+  </body>
+</document>

@@ -11,6 +11,13 @@
   <description>Jakarta Slide WebDAV Server</description>
   <shortDescription>Jakarta Slide WebDAV Server</shortDescription>
   <issueTrackingUrl>http://issues.idega.is</issueTrackingUrl>
+  <versions>
+      <version>
+      <id>2.2pre1.iwbuild3</id>
+      <name>2.2pre1.iwbuild3</name>
+      <tag>APACHE_SLIDE_2.2pre1.iwbuild3</tag>
+    </version>
+  </versions>
   <developers>
     <developer>
       <name>Tryggvi Larusson</name>
