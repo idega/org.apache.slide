@@ -15,7 +15,7 @@
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/commons-pool/jars/commons-pool-1.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-transaction/jars/commons-transaction-1.0rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/commons-transaction/jars/commons-transaction-1.0.jar">
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-2.0.jar">
   </classpathentry>
@@ -39,23 +39,22 @@
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/slide/jars/saxpath.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/jakarta-slide-webdavlib-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/jakarta-slide-webdavlib-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jaas-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jaas-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jdk14logger-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jdk14logger-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-kernel-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-kernel-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-log4jlogger-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-log4jlogger-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-roles-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-roles-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-stores-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-stores-2.1.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-webdavservlet-2.1rc1.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-webdavservlet-2.1.jar">
   </classpathentry>
   <classpathentry kind="output" path="target/classes">
   </classpathentry>
-   <classpathentry kind="lib" path="WEB-INF/classes"/>
 </classpath>
