@@ -247,6 +247,19 @@
                     <permission action="all" subject="unauthenticated" inheritable="true"/>
                     <permission action="/actions/write" subject="/roles/user" inheritable="true"/>
                     <permission action="/actions/read-acl" subject="owner" inheritable="true"/>
+                    
+                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/users">
+                    </objectnode>
+                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/groups">
+                    </objectnode>
+                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/cms">
+                    </objectnode>
+                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/public">
+                    </objectnode>
+                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/shared">
+                    </objectnode>
+                    <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/dropbox">
+                    </objectnode>
                 </objectnode>
                 <!--objectnode classname="org.apache.slide.structure.SubjectNode" uri="/projector">
                     <permission action="all" subject="unauthenticated" inheritable="true"/>
