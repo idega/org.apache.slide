@@ -18,6 +18,11 @@
       <name>2.2pre1.iwbuild3</name>
       <tag>APACHE_SLIDE_2_2_pre1_iwbuild3</tag>
     </version>
+    <version>
+      <id>2.2pre1.iwbuild3</id>
+      <name>2.2pre1.iwbuild3</name>
+      <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD3</tag>
+    </version>
   </versions>
   <developers>
     <developer>

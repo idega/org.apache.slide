@@ -5,9 +5,9 @@
   </properties>
   <body>
   
-    <release version="2.2pre1.iwbuild3" date="2005-03-10">
+    <release version="2.2pre1.iwbuild3" date="2005-04-06">
       <action dev="tryggvil" type="update">
-        Declaration of version for use with core 3.0.0
+        Declaration of version for use with core 3.0.4
       </action>              
     </release>
 
