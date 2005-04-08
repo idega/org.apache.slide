@@ -144,7 +144,7 @@
                 <permission action="/actions/read-acl" subject="all" inheritable="true" negative="true"/>
                 <permission action="/actions/write-acl" subject="all" inheritable="true" negative="true"/>
                 <permission action="/actions/unlock" subject="all" inheritable="true" negative="true"/>
-                <permission action="/actions/read" subject="all" inheritable="true"/>
+                <!--permission action="/actions/read" subject="all" inheritable="true"/-->
                 <!-- /users -->
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/users">
                     <permission action="all" subject="self" inheritable="true"/>
@@ -259,8 +259,8 @@
                     </objectnode>
                 </objectnode>
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files">
-                    <permission action="all" subject="unauthenticated" inheritable="true"/>
-                    <permission action="/actions/write" subject="/roles/user" inheritable="true"/>
+                    <!--permission action="all" subject="unauthenticated" inheritable="true"/-->
+                    <!--permission action="/actions/write" subject="/roles/user" inheritable="true"/-->
                     <permission action="/actions/read-acl" subject="owner" inheritable="true"/>
                     
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/users">
@@ -268,12 +268,15 @@
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/groups">
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/cms">
+                    		<permission action="/actions/read" subject="all" inheritable="true"/>
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/public">
+                    		<permission action="/actions/read" subject="all" inheritable="true"/>
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/shared">
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/dropbox">
+                    		<permission action="/actions/write" subject="authenticated" inheritable="true"/>
                     </objectnode>
                 </objectnode>
                 <!--objectnode classname="org.apache.slide.structure.SubjectNode" uri="/projector">
