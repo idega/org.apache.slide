@@ -274,6 +274,8 @@
                     		<permission action="/actions/read" subject="all" inheritable="true"/>
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/shared">
+                    		<permission action="/actions/read" subject="authenticated" inheritable="true"/>
+                    		<permission action="/actions/write" subject="authenticated" inheritable="true"/>
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/dropbox">
                     		<permission action="/actions/write" subject="authenticated" inheritable="true"/>
