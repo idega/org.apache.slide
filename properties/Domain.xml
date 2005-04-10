@@ -67,9 +67,11 @@
   
    <contentindexer classname="org.apache.slide.index.lucene.LuceneContentIndexer">
        <parameter name="indexpath">store/index/content</parameter>
+       <parameter name="asynchron">true</parameter>
   </contentindexer>
    <propertiesindexer classname="org.apache.slide.index.lucene.LucenePropertiesIndexer">
        <parameter name="indexpath">store/index/metadata</parameter>
+       <parameter name="asynchron">true</parameter>
        
        <configuration name="indexed-properties">
 	       <property name="ContentType" namespace="IW:">
