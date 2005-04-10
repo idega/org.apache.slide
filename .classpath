@@ -43,21 +43,21 @@
   </classpathentry>
   <classpathentry kind="var" path="MAVEN_REPO/slide/jars/saxpath.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/jakarta-slide-webdavlib-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/jakarta-slide-webdavlib-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jaas-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jaas-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jdk14logger-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jdk14logger-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-kernel-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-kernel-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-log4jlogger-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-log4jlogger-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-roles-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-roles-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-stores-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-stores-2.2pre1.iwbuild4.jar">
   </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-webdavservlet-2.2pre1.iwbuild3.jar">
+  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-webdavservlet-2.2pre1.iwbuild4.jar">
   </classpathentry>
   <classpathentry kind="output" path="target/classes">
   </classpathentry>
