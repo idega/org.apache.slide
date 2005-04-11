@@ -123,7 +123,7 @@
             <!-- Can be "off", "write" and "full" -->
             <parameter name="sequential-mode">full</parameter>
             <!-- "false" lets all read-only methods be executed outside of transactions -->
-            <parameter name="all-methods-in-transactions">true</parameter>
+            <parameter name="all-methods-in-transactions">false</parameter>
             <!-- Setting this to true will force Slide to internally convert the username a user
                  enters at login to lowercase. This is useful for users who can't be bothered
                  with turning off their capslock key before logging in. -->
@@ -381,12 +381,12 @@
     		<!--XML extractors-->
         <extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
             <configuration>
-                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="headline" xpath="/article/headline" />
-                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="teaser" xpath="/article/teaser" />
-                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="body" xpath="/article/body" />
-                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="author" xpath="/article/author" />
-                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="source" xpath="/article/source" />
-                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="comment" xpath="/article/comment" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="headline" xpath="/article/headline/text()" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="teaser" xpath="/article/teaser/text()" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="body" xpath="/article/body/text()" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="author" xpath="/article/author/text()" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="source" xpath="/article/source/text()" />
+                <instruction namespace="http://xmlns.idega.com/block/article/xml" property="comment" xpath="/article/comment/text()" />
             </configuration>
         </extractor>
         <extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files"/>
