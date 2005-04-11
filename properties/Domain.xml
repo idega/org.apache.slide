@@ -146,7 +146,7 @@
                 <permission action="/actions/read-acl" subject="all" inheritable="true" negative="true"/>
                 <permission action="/actions/write-acl" subject="all" inheritable="true" negative="true"/>
                 <permission action="/actions/unlock" subject="all" inheritable="true" negative="true"/>
-                <!--permission action="/actions/read" subject="all" inheritable="true"/-->
+                <permission action="/actions/read" subject="all" inheritable="false"/>
                 <!-- /users -->
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/users">
                     <permission action="all" subject="self" inheritable="true"/>
@@ -264,8 +264,10 @@
                     <!--permission action="all" subject="unauthenticated" inheritable="true"/-->
                     <!--permission action="/actions/write" subject="/roles/user" inheritable="true"/-->
                     <permission action="/actions/read-acl" subject="owner" inheritable="true"/>
+                    <permission action="/actions/read" subject="all" inheritable="false"/>
                     
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/users">
+                    		<permission action="/actions/read" subject="authenticated" inheritable="false"/>
                     </objectnode>
                     <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/files/groups">
                     </objectnode>
@@ -293,7 +295,8 @@
                 <!-- DeltaV: default history and workspace paths -->
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/history">
                     <permission action="all" subject="unauthenticated" inheritable="true"/>
-                    <permission action="/actions/write" subject="/roles/user" inheritable="true"/>
+                    <permission action="all" subject="authenticated" inheritable="true"/>
+                    <permission action="/actions/write" subject="authenticated" inheritable="true"/>
                     <permission action="/actions/read-acl" subject="owner" inheritable="true"/>
                 </objectnode>
                 <objectnode classname="org.apache.slide.structure.SubjectNode" uri="/workspace">
