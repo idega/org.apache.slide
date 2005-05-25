@@ -6,7 +6,7 @@
   <artifactId>org.apache.slide</artifactId>
   <name>Apache Jakarta Slide</name>
   <groupId>bundles</groupId>
-  <currentVersion>2.2pre1.iwbuild4</currentVersion>
+  <currentVersion>2.2pre1.iwbuild4.1</currentVersion>
   <organization/>
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
@@ -22,6 +22,11 @@
       <id>2.2pre1.iwbuild3</id>
       <name>2.2pre1.iwbuild3</name>
       <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD3</tag>
+    </version>
+    <version>
+      <id>2.2pre1.iwbuild3</id>
+      <name>2.2pre1.iwbuild3</name>
+      <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD4_1</tag>
     </version>
   </versions>
   <developers>
@@ -60,16 +65,13 @@
       <url>http://java.sun.com/products/servlet/docs.html</url>
     </dependency>
     <!-- Commons -->
-
+	<!-- codec already included in core -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
       <version>1.3</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/commons/codec/</url>
-      <properties>
-        <idegaweb.bundle.include>true</idegaweb.bundle.include>
-      </properties>
     </dependency>
     <dependency>
       <groupId>commons-collections</groupId>
@@ -111,15 +113,13 @@
         <idegaweb.bundle.include>true</idegaweb.bundle.include>
       </properties>
     </dependency>
+    <!-- httpclient already included in core -->
     <dependency>
       <groupId>commons-httpclient</groupId>
       <artifactId>commons-httpclient</artifactId>
       <version>2.0.2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/commons/httpclient/</url>
-      <properties>
-        <idegaweb.bundle.include>true</idegaweb.bundle.include>
-      </properties>
     </dependency>
     <dependency>
       <groupId>commons-xmlio</groupId>
@@ -185,12 +185,9 @@
     <dependency>
       <groupId>lucene</groupId>
       <artifactId>lucene</artifactId>
-      <version>1.4.1</version>
+      <version>1.2</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/lucene/docs/</url>
-      <properties>
-        <idegaweb.bundle.include>true</idegaweb.bundle.include>
-      </properties>
     </dependency>
     <dependency>
       <groupId>pdfbox</groupId>
@@ -252,15 +249,13 @@
         <idegaweb.bundle.include>true</idegaweb.bundle.include>
       </properties>
     </dependency>
+    <!-- already included in core -->
     <dependency>
       <groupId>slide</groupId>
       <artifactId>jakarta-slide-webdavlib</artifactId>
       <version>2.2pre1.iwbuild4</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/slide/</url>
-      <properties>
-        <idegaweb.bundle.include>true</idegaweb.bundle.include>
-      </properties>
     </dependency>
     <dependency>
       <groupId>slide</groupId>

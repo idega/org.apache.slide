@@ -4,7 +4,13 @@
     <author email="tryggvi@idega.com">Tryggvi Larusson</author>
   </properties>
   <body>
-  
+      <release version="2.2pre1.iwbuild4.1" date="2005-05-25">
+      <action dev="tryggvil" type="update">
+        Declaration of version for use with core 3.0.5,
+        running now with lucene version 1.2 
+        (prior 1.4.1 - not compatible with com.idega.block.websearch!)
+      </action>              
+    </release>
     <release version="2.2pre1.iwbuild3" date="2005-04-06">
       <action dev="tryggvil" type="update">
         Declaration of version for use with core 3.0.4
