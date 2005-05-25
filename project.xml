@@ -17,11 +17,16 @@
       <id>2.2pre1.iwbuild3</id>
       <name>2.2pre1.iwbuild3</name>
       <tag>APACHE_SLIDE_2_2_pre1_iwbuild3</tag>
-    </version> 
+    </version>
     <version>
       <id>2.2pre1.iwbuild3</id>
       <name>2.2pre1.iwbuild3</name>
       <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD3</tag>
+    </version>
+    <version>
+      <id>2.2pre1.iwbuild4.1</id>
+      <name>2.2pre1.iwbuild4.1</name>
+      <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD4_1</tag>
     </version>
   </versions>
   <developers>
@@ -60,7 +65,8 @@
       <url>http://java.sun.com/products/servlet/docs.html</url>
     </dependency>
     <!-- Commons -->
-	<!-- codec already included in core -->
+    <!-- codec already included in core -->
+
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
@@ -109,6 +115,7 @@
       </properties>
     </dependency>
     <!-- httpclient already included in core -->
+
     <dependency>
       <groupId>commons-httpclient</groupId>
       <artifactId>commons-httpclient</artifactId>
@@ -245,6 +252,7 @@
       </properties>
     </dependency>
     <!-- already included in core -->
+
     <dependency>
       <groupId>slide</groupId>
       <artifactId>jakarta-slide-webdavlib</artifactId>
