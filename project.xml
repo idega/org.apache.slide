@@ -187,7 +187,7 @@
     <dependency>
       <groupId>lucene</groupId>
       <artifactId>lucene</artifactId>
-      <version>1.2</version>
+      <version>1.4.1</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/lucene/docs/</url>
     </dependency>
