@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <slide>
 	<namespace name="slide">
-<!--<definition>
+		<definition>
             <store name="tx">
                 <parameter name="tlock-timeout">120</parameter>
                 <nodestore classname="org.apache.slide.store.txfile.TxXMLFileDescriptorsStore">
@@ -56,14 +56,14 @@
             </store>
             <scope match="/" store="tx"/>
         </definition>
--->
+<!--
 		<definition>
 			<store name="IWStore">
 				<nodestore classname="com.idega.slide.store.IWSlideJDBCStore">
 					<parameter name="dbcpPooling">
 						true 
 					</parameter>
-<!--<parameter name="isolation">SERIALIZABLE</parameter> iw: not secure if using Oracle -->
+-<parameter name="isolation">SERIALIZABLE</parameter> iw: not secure if using Oracle -
 					<parameter name="compress">
 						false 
 					</parameter>
@@ -108,6 +108,7 @@
 			</store>
 			<scope match="/" store="IWStore" />
 		</definition>
+-->
 		<configuration>
 <!-- Actions mapping -->
 			<read-object>
