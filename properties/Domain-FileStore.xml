@@ -501,7 +501,7 @@
 <!-- Extractor configuration -->
 	<extractors>
 <!--XML extractors-->
-		<extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
+		<!--extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
 			<configuration>
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="headline" xpath="/article/headline/text()" />
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="teaser" xpath="/article/teaser/text()" />
@@ -510,11 +510,11 @@
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="source" xpath="/article/source/text()" />
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="comment" xpath="/article/comment/text()" />
 			</configuration>
-		</extractor>
+		</extractor-->
 		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files" />
 <!--XML extractors-->
 <!--PDF extractors-->
-		<extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files" />
+		<!--extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files" /-->
 <!--PDF extractors-->
 <!--Text extractors-->
 		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files" />
