@@ -84,20 +84,10 @@
 					<reference store="nodestore" />
 				</revisiondescriptorstore>
 				<contentindexer classname="org.apache.slide.index.lucene.LuceneContentIndexer">
-					<parameter name="indexpath">
-						store/index/content 
-					</parameter>
-					<parameter name="asynchron">
-						true 
-					</parameter>
+					<parameter name="indexpath">store/index/content</parameter>
 				</contentindexer>
 				<propertiesindexer classname="org.apache.slide.index.lucene.LucenePropertiesIndexer">
-					<parameter name="indexpath">
-						store/index/metadata 
-					</parameter>
-					<parameter name="asynchron">
-						true 
-					</parameter>
+					<parameter name="indexpath">store/index/metadata</parameter>
 					<configuration name="indexed-properties">
 						<property name="ContentType" namespace="IW:">
 							<text />
@@ -500,7 +490,8 @@
 <!-- Extractor configuration -->
 	<extractors>
 <!--XML extractors-->
-		<!--extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
+		<!-- DISABLED because it does not work with our namespace for some reason...
+			extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
 			<configuration>
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="headline" xpath="/article/headline/text()" />
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="teaser" xpath="/article/teaser/text()" />
@@ -513,7 +504,7 @@
 		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files" />
 <!--XML extractors-->
 <!--PDF extractors-->
-		<!--extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files" /-->
+	<extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files" />
 <!--PDF extractors-->
 <!--Text extractors-->
 		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files" />
