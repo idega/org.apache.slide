@@ -104,7 +104,8 @@
         </init-param>
         <init-param>
             <param-name>depth-limit</param-name>
-            <param-value>3</param-value>
+            <!-- iw: changed from 3 to 1000 (a lot closer to infinity than 3 ;) -->
+            <param-value>1000</param-value>
             <description>
                  This init-parameter determines the depth limit for PROPFIND and other
                  methods, to avoid performance hits on the server for requests with
