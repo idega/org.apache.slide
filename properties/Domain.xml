@@ -59,7 +59,7 @@
 -->
 		<definition>
 			<store name="IWStore">
-				<nodestore classname="com.idega.slide.store.IWSlideJDBCStore">
+				<nodestore classname="com.idega.slide.store.IWSlideStore">
 					<parameter name="dbcpPooling">
 						true 
 					</parameter>
