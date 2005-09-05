@@ -28,7 +28,7 @@
         </init-param>
         <init-param>
             <param-name>outputToConsole</param-name>
-            <param-value>true</param-value>
+            <param-value>false</param-value>
             <description>If true, output is directed to STDOUT.</description>
         </init-param>
         <init-param>
