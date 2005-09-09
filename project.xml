@@ -6,7 +6,7 @@
   <artifactId>org.apache.slide</artifactId>
   <name>Apache Jakarta Slide</name>
   <groupId>bundles</groupId>
-  <currentVersion>2.2pre1.iwbuild4.1</currentVersion>
+  <currentVersion>2.2pre1.iwbuild5</currentVersion>
   <organization/>
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
@@ -27,6 +27,11 @@
       <id>2.2pre1.iwbuild4.1</id>
       <name>2.2pre1.iwbuild4.1</name>
       <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD4_1</tag>
+    </version>
+    <version>
+      <id>2.2pre1.iwbuild5</id>
+      <name>2.2pre1.iwbuild5</name>
+      <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD5</tag>
     </version>
   </versions>
   <developers>
