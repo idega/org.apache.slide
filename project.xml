@@ -33,6 +33,11 @@
       <name>2.2pre1.iwbuild5</name>
       <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD5</tag>
     </version>
+    <version>
+      <id>2.2pre1.iwbuild5</id>
+      <name>2.2pre1.iwbuild5</name>
+      <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD_5</tag>
+    </version>
   </versions>
   <developers>
     <developer>
@@ -178,8 +183,8 @@
       </properties>
     </dependency>
     <!-- -->
+    <!-- log4j already included in core -->
 
-	<!-- log4j already included in core -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
@@ -187,7 +192,6 @@
       <type>jar</type>
       <url>http://logging.apache.org/log4j/docs</url>
     </dependency>
-    
     <dependency>
       <groupId>lucene</groupId>
       <artifactId>lucene</artifactId>
