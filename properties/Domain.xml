@@ -1,64 +1,14 @@
 <?xml version="1.0"?>
 <slide>
 	<namespace name="slide">
-<!--<definition>
-            <store name="tx">
-                <parameter name="tlock-timeout">120</parameter>
-                <nodestore classname="org.apache.slide.store.txfile.TxXMLFileDescriptorsStore">
-                    <parameter name="rootpath">store/metadata</parameter>
-                    <parameter name="workpath">work/metadata</parameter>
-                    <parameter name="defer-saving">true</parameter>
-                    <parameter name="timeout">120</parameter>
-                </nodestore>
-                <sequencestore classname="org.apache.slide.store.txfile.FileSequenceStore">
-                    <parameter name="rootpath">store/sequence</parameter>
-                </sequencestore>
-                <securitystore>
-                    <reference store="nodestore"/>
-                </securitystore>
-                <lockstore>
-                    <reference store="nodestore"/>
-                </lockstore>
-                <revisiondescriptorsstore>
-                    <reference store="nodestore"/>
-                </revisiondescriptorsstore>
-                <revisiondescriptorstore>
-                    <reference store="nodestore"/>
-                </revisiondescriptorstore>
-                <contentstore classname="org.apache.slide.store.txfile.TxFileContentStore">
-                    <parameter name="rootpath">store/content</parameter>
-                    <parameter name="workpath">work/content</parameter>
-                    <parameter name="defer-saving">true</parameter>
-                    <parameter name="timeout">120</parameter>
-                </contentstore>
-				<contentindexer classname="org.apache.slide.index.lucene.LuceneContentIndexer">
-					<parameter name="indexpath">
-						store/index/content 
-					</parameter>
-					<parameter name="asynchron">
-						true 
-					</parameter>
-				</contentindexer>
-				<propertiesindexer classname="org.apache.slide.index.lucene.LucenePropertiesIndexer">
-					<parameter name="indexpath">
-						store/index/metadata 
-					</parameter>
-					<parameter name="asynchron">
-						true 
-					</parameter>
-					<configuration name="indexed-properties">
-						<property name="ContentType" namespace="IW:">
-							<text />
-							<is-defined />
-						</property>
-					</configuration>
-				</propertiesindexer>
-            </store>
-            <scope match="/" store="tx"/>
-        </definition>
--->
 		<definition>
 			<store name="IWStore">
+				<!--Enable content cache and up the cache size from the default (in bytes) -->
+				<parameter name="enable-content-caching">true</parameter>
+           		<parameter name="max-content-bytes-per-entry">300000</parameter>
+           		<parameter name="tx-content-cache-bytes">10000000</parameter>
+           		<parameter name="content-cache-bytes">30000000</parameter>    
+           		
 				<nodestore classname="com.idega.slide.store.IWSlideStore">
 					<parameter name="dbcpPooling">
 						true 
@@ -197,7 +147,7 @@
 			</parameter>
 <!-- Can be "off", "write" and "full" -->
 			<parameter name="sequential-mode">
-				full 
+				write 
 			</parameter>
 <!-- "false" lets all read-only methods be executed outside of transactions -->
 			<parameter name="all-methods-in-transactions">

@@ -3,6 +3,12 @@
 	<namespace name="slide">
 		<definition>
             <store name="tx">
+            		<!--Enable content cache and up the cache size from the default (in bytes) -->
+				<parameter name="enable-content-caching">true</parameter>
+           		<parameter name="max-content-bytes-per-entry">300000</parameter>
+           		<parameter name="tx-content-cache-bytes">10000000</parameter>
+           		<parameter name="content-cache-bytes">30000000</parameter>      
+           	            
                 <parameter name="tlock-timeout">120</parameter>
                 <nodestore classname="org.apache.slide.store.txfile.TxXMLFileDescriptorsStore">
                     <parameter name="rootpath">store/metadata</parameter>
@@ -208,7 +214,7 @@
 			</parameter>
 <!-- Can be "off", "write" and "full" -->
 			<parameter name="sequential-mode">
-				full 
+				write 
 			</parameter>
 <!-- "false" lets all read-only methods be executed outside of transactions -->
 			<parameter name="all-methods-in-transactions">
