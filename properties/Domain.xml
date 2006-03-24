@@ -494,6 +494,10 @@
 				<indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/" />
 			</configuration>
 		</listener>
+		
+		<!-- Idegaweb addon: Register IWSlideChangeListener to get notification from IWSlideChangeTrigger -->
+		<listener classname="com.idega.slide.business.IWSlideChangeTrigger" />
+		
 <!-- Uncomment for cluster support. Be sure to local-host and repository-host -->
 <!--
 		<listener classname="org.apache.slide.cluster.ClusterCacheRefresher">
