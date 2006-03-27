@@ -470,6 +470,20 @@
 		<extractor classname="org.apache.slide.extractor.MSExcelExtractor" uri="/files" />
 		<extractor classname="org.apache.slide.extractor.MSPowerPointExtractor" uri="/files" />
 <!--Office extractors-->
+		
+	<!--Idega addons-->
+		<!--Image extractor-->
+		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files"/>
+		<!--Image extractor-->
+		<!--Constant extractor, adds the all configured properties to all files that meet the criteria, COMMENTED OUT-->
+			<!--extractor classname="com.idega.slide.extractor.ConstantExtractor" uri="/files/public/images" content-type="application/pdf" >
+			  <configuration>
+			    <instruction property="type" namespace="http://idega.com/cms/1.0" value="asset" />
+			  </configuration>
+			</extractor-->
+		<!--Constant extractor-->
+	<!--Idega addons ends-->
+	
 	</extractors>
 <!-- Event configuration -->
 	<events>
