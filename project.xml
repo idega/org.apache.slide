@@ -38,6 +38,11 @@
       <name>2.2pre1.iwbuild5</name>
       <tag>APACHE_SLIDE_2_2_PRE1_IWBUILD_5</tag>
     </version>
+    <version>
+      <id>2.2b6</id>
+      <name>2.2b6</name>
+      <tag>APACHE_SLIDE_2_2B6</tag>
+    </version>
   </versions>
   <developers>
     <developer>
@@ -85,6 +90,7 @@
       <url>http://jakarta.apache.org/commons/codec/</url>
     </dependency>
     <!-- commons-collections (3.1) already included in core -->
+
     <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
