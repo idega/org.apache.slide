@@ -4,6 +4,16 @@
     <author email="tryggvi@idega.com">Tryggvi Larusson</author>
   </properties>
   <body>
+      <release version="2.2b6" date="2005-06-16">
+      <action dev="tryggvil" type="update">
+      	Declaration of version for including in ePlatform release 3.1
+      </action>
+      <action dev="tryggvil" type="update">
+      	web.xml fragment included moved to com.idega.slide module wher
+      	WebDavServlet is extended with detecting store implementation.
+      </action>            
+    </release>
+  
       <release version="2.2pre1.iwbuild4.1" date="2005-05-25">
       <action dev="tryggvil" type="update">
         Declaration of version for use with core 3.0.5,
