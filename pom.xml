@@ -76,7 +76,7 @@
     <dependency>
       <groupId>commons-transaction</groupId>
       <artifactId>commons-transaction</artifactId>
-      <version>1.1b2</version>
+      <version>1.1</version>
       <type>jar</type>
     </dependency>
     <!-- httpclient already included in core -->
@@ -101,7 +101,7 @@
     <!-- -->
 
     <dependency>
-      <groupId>ehcache</groupId>
+      <groupId>net.sf.ehcache</groupId>
       <artifactId>ehcache</artifactId>
       <version>1.2</version>
       <type>jar</type>
@@ -109,7 +109,7 @@
     <dependency>
       <groupId>jaxen</groupId>
       <artifactId>jaxen</artifactId>
-      <version>1.0-FCS-full</version>
+      <version>1.0-FCS</version>
       <!-- jaxen-core.jar jaxen-jdom.jar -->
       <type>jar</type>
     </dependency>
@@ -143,13 +143,13 @@
     <!-- Slide -->
     <!--  -->
     <dependency>
-      <groupId>tm-extractors</groupId>
+      <groupId>org.textmining</groupId>
       <artifactId>tm-extractors</artifactId>
       <version>0.4</version>
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>xml-im-exporter</groupId>
+      <groupId>de.zeigermann.xml</groupId>
       <artifactId>xml-im-exporter</artifactId>
       <version>1.1</version>
       <type>jar</type>
@@ -161,15 +161,15 @@
       <type>jar</type>
     </dependency>
     <dependency>
-      <groupId>slide</groupId>
+      <groupId>saxpath</groupId>
       <artifactId>saxpath</artifactId>
-      <version>1.0</version>
+      <version>1.0-FCS</version>
       <type>jar</type>
     </dependency>
     <!-- already included in core -->
     <dependency>
       <groupId>slide</groupId>
-      <artifactId>jakarta-slide-webdavlib</artifactId>
+      <artifactId>slide-webdavlib</artifactId>
       <version>2.2pre1.iwbuild4</version>
       <type>jar</type>
     </dependency>
