@@ -1,64 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <classpath>
-  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/jdom/jars/jdom-1.0.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/servletapi/jars/servletapi-2.4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-codec/jars/commons-codec-1.3.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-collections/jars/commons-collections-3.1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-dbcp/jars/commons-dbcp-1.2.1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-pool/jars/commons-pool-1.1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-transaction/jars/commons-transaction-1.1b2.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-httpclient/jars/commons-httpclient-2.0.2.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/commons-xmlio/jars/commons-xmlio-0.1pre.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/ojb/jars/db-ojb-1.0.1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/ehcache/jars/ehcache-1.2.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/jaxen/jars/jaxen-1.0-FCS-full.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/log4j/jars/log4j-1.2.8.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/lucene/jars/lucene-1.4.1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/pdfbox/jars/pdfbox-0.6.5.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/poi/jars/poi-2.5-final-20040428.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/tm-extractors/jars/tm-extractors-0.4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/xml-im-exporter/jars/xml-im-exporter-1.1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/geronimo-spec/jars/geronimo-spec-jta-1.0-M1.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/saxpath.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/jakarta-slide-webdavlib-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jaas-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-jdk14logger-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-kernel-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-log4jlogger-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-roles-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-stores-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="var" path="MAVEN_REPO/slide/jars/slide-webdavservlet-2.2pre1.iwbuild4.jar">
-  </classpathentry>
-  <classpathentry kind="output" path="target/classes">
-  </classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
