@@ -38,13 +38,6 @@
       <!-- jdom-20040226-.jar -->
       <type>jar</type>
     </dependency>
-    <!-- ServletAPI -->
-    <dependency>
-      <groupId>servletapi</groupId>
-      <artifactId>servletapi</artifactId>
-      <version>2.4</version>
-      <type>jar</type>
-    </dependency>
     <!-- Commons -->
     <!-- codec already included in core -->
     <dependency>
