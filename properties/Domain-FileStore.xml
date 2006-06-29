@@ -53,8 +53,29 @@
 						true 
 					</parameter>
 					<configuration name="indexed-properties">
+						<!-- Idega custom properties and forcing some standard properties to be case insensitive -->
 						<property name="ContentType" namespace="IW:">
-							<text />
+							<text analyzer="org.apache.lucene.analysis.SimpleAnalyzer"/>
+							<is-defined />
+						</property>
+						<property name="displayname" namespace="DAV:">
+							<text analyzer="org.apache.lucene.analysis.SimpleAnalyzer"/>
+							<is-defined />
+						</property>
+						<property name="creator-displayname" namespace="DAV:">
+							<text analyzer="org.apache.lucene.analysis.SimpleAnalyzer"/>
+							<is-defined />
+						</property>
+						<property name="getcontenttype" namespace="DAV:">
+							<text analyzer="org.apache.lucene.analysis.SimpleAnalyzer"/>
+							<is-defined />
+						</property>
+						<property name="comment" namespace="DAV:">
+							<text analyzer="org.apache.lucene.analysis.SimpleAnalyzer"/>
+							<is-defined />
+						</property>
+						<property name="getcontentlanguage" namespace="DAV:">
+							<text analyzer="org.apache.lucene.analysis.SimpleAnalyzer"/>
 							<is-defined />
 						</property>
 					</configuration>
