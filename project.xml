@@ -43,6 +43,11 @@
       <name>2.2b6</name>
       <tag>APACHE_SLIDE_2_2B6</tag>
     </version>
+    <version>
+      <id>2.2b7</id>
+      <name>2.2b7</name>
+      <tag>APACHE_SLIDE_2_2B7</tag>
+    </version>
   </versions>
   <developers>
     <developer>
