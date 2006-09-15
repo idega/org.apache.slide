@@ -48,6 +48,11 @@
       <name>2.2b7</name>
       <tag>APACHE_SLIDE_2_2B7</tag>
     </version>
+    <version>
+      <id>2.2b8</id>
+      <name>2.2b8</name>
+      <tag>APACHE_SLIDE_2_2B8</tag>
+    </version>
   </versions>
   <developers>
     <developer>
