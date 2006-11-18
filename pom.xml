@@ -59,12 +59,36 @@
       <artifactId>commons-dbcp</artifactId>
       <version>1.2.1</version>
       <type>jar</type>
+      <exclusions>
+        <exclusion>
+          <groupId>xerces</groupId>
+          <artifactId>xerces</artifactId>
+          <!-- too old version -->
+        </exclusion>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+          <!-- too old version -->
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-pool</groupId>
       <artifactId>commons-pool</artifactId>
       <version>1.1</version>
       <type>jar</type>
+      <exclusions>
+        <exclusion>
+          <groupId>xerces</groupId>
+          <artifactId>xerces</artifactId>
+          <!-- too old version -->
+        </exclusion>
+        <exclusion>
+          <groupId>xml-apis</groupId>
+          <artifactId>xml-apis</artifactId>
+          <!-- too old version -->
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-transaction</groupId>
