@@ -4,7 +4,19 @@
     <author email="tryggvi@idega.com">Tryggvi Larusson</author>
   </properties>
   <body>
-      <release version="2.2b6" date="2005-06-16">
+  	<release version="2.2b8" date="2005-07-28">
+      <action dev="eiki" type="update">
+    	Updated Lucene dependency to v. 1.9.1 because of a memory leak in 1.4.1.
+    	Lucene v.1.9.1 is backward compatible to 1.4 and forward compatible to 2.0 	
+    </action>       
+    </release>
+	<release version="2.2b7" date="2006-06-30">
+      <action dev="eiki" type="update">
+      	Added property index definitions to enable case insensitive searching of standard properties.
+      </action>       
+    </release>
+    
+      <release version="2.2b6" date="2006-06-16">
       <action dev="tryggvil" type="update">
       	Declaration of version for including in ePlatform release 3.1
       </action>

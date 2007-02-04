@@ -44,6 +44,11 @@
       <tag>APACHE_SLIDE_2_2B6</tag>
     </version>
     <version>
+      <id>2.2b7</id>
+      <name>2.2b7</name>
+      <tag>APACHE_SLIDE_2_2B7</tag>
+    </version>
+    <version>
       <id>2.2b8</id>
       <name>2.2b8</name>
       <tag>APACHE_SLIDE_2_2B8</tag>
@@ -203,8 +208,8 @@
     </dependency>
     <dependency>
       <groupId>lucene</groupId>
-      <artifactId>lucene</artifactId>
-      <version>1.4.1</version>
+      <artifactId>lucene-core</artifactId>
+      <version>1.9.1</version>
       <type>jar</type>
       <url>http://jakarta.apache.org/lucene/docs/</url>
     </dependency>
