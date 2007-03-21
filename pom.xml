@@ -11,7 +11,7 @@
   <groupId>com.idega.block.platform</groupId>
   <artifactId>org.apache.slide</artifactId>
   <name>Apache Jakarta Slide</name>
-  <version>2.2b6</version>
+  <version>2.2pre1.iwbuild5</version>
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
   <developers>
@@ -109,7 +109,7 @@
     <dependency>
       <groupId>commons-transaction</groupId>
       <artifactId>commons-transaction</artifactId>
-      <version>1.1</version>
+      <version>1.1.1pre1</version>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -169,8 +169,8 @@
     </dependency>
     <dependency>
       <groupId>lucene</groupId>
-      <artifactId>lucene</artifactId>
-      <version>1.4.1</version>
+      <artifactId>lucene-core</artifactId>
+      <version>2.1.0</version>
       <type>jar</type>
     </dependency>
     <dependency>
@@ -215,50 +215,50 @@
     <!-- already included in core -->
     <dependency>
       <groupId>slide</groupId>
-      <artifactId>slide-webdavlib</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <artifactId>jakarta-slide-webdavlib</artifactId>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-jaas</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-jdk14logger</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-kernel</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-log4jlogger</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-roles</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-stores</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
       <groupId>slide</groupId>
       <artifactId>slide-webdavservlet</artifactId>
-      <version>2.2pre1.iwbuild4</version>
+      <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
     </dependency>
     <dependency>
