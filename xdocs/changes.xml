@@ -4,6 +4,15 @@
     <author email="tryggvi@idega.com">Tryggvi Larusson</author>
   </properties>
   <body>
+  	<release version="2.2pre1.iwbuild5" date="2007-03-20">
+      <action dev="eiki" type="update">
+    	Updated Lucene dependency to v. 2.1.0 because of Slide HEAD version.
+    	Updated commons-httpclient to v. 3.0.1
+    	Changed slide.properties in HEAD and this bundle to add org.apache.slide.binding=false, that was needed to make it work again.
+    	Rebuilt Slide from HEAD with those changes with JVM 1.4 and named it version: 2.2pre1.iwbuild5 
+    	YOU MUST REINDEX YOUR SITE FOR IT TO WORK AGAIN
+    </action>       
+    </release>
   	<release version="2.2b8" date="2005-07-28">
       <action dev="eiki" type="update">
     	Updated Lucene dependency to v. 1.9.1 because of a memory leak in 1.4.1.
