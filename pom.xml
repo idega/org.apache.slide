@@ -164,14 +164,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-    <!-- -->
-    <!-- log4j already included in core -->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.8</version>
-      <type>jar</type>
-    </dependency>
     <dependency>
       <groupId>lucene</groupId>
       <artifactId>lucene-core</artifactId>
@@ -244,12 +236,6 @@
     </dependency>
     <dependency>
       <groupId>slide</groupId>
-      <artifactId>slide-log4jlogger</artifactId>
-      <version>2.2pre1.iwbuild5</version>
-      <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>slide</groupId>
       <artifactId>slide-roles</artifactId>
       <version>2.2pre1.iwbuild5</version>
       <type>jar</type>
@@ -305,7 +291,6 @@
       <resource>
         <directory>${basedir}/WEB-INF/classes</directory>
         <includes>
-          <include>log4j.properties</include>
           <include>slide.properties</include>
         </includes>
       </resource>
