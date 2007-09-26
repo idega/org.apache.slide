@@ -34,21 +34,9 @@
     </developer>
   </developers>
   <dependencies>
-    <!-- JDom -->
-
     <dependency>
       <groupId>jdom</groupId>
       <artifactId>jdom</artifactId>
-      <version>1.0</version>
-      <!-- jdom-20040226-.jar -->
-      <type>jar</type>
-      <exclusions>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xercesImpl</artifactId>
-          <!-- too old version -->
-        </exclusion>
-      </exclusions>
     </dependency>
     <!-- Commons -->
     <!-- codec already included in core -->
@@ -68,48 +56,10 @@
     <dependency>
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
-      <version>1.2.1</version>
-      <type>jar</type>
-      <exclusions>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xerces</artifactId>
-          <!-- too old version -->
-        </exclusion>
-        <exclusion>
-          <groupId>xml-apis</groupId>
-          <artifactId>xml-apis</artifactId>
-          <!-- too old version -->
-        </exclusion>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xercesImpl</artifactId>
-          <!-- too old version -->
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-pool</groupId>
       <artifactId>commons-pool</artifactId>
-      <version>1.1</version>
-      <type>jar</type>
-      <exclusions>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xerces</artifactId>
-          <!-- too old version -->
-        </exclusion>
-        <exclusion>
-          <groupId>xml-apis</groupId>
-          <artifactId>xml-apis</artifactId>
-          <!-- too old version -->
-        </exclusion>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xercesImpl</artifactId>
-          <!-- too old version -->
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-transaction</groupId>
@@ -135,34 +85,13 @@
       <version>1.0.1</version>
       <type>jar</type>
     </dependency>
-    <!-- -->
-
     <dependency>
       <groupId>net.sf.ehcache</groupId>
       <artifactId>ehcache</artifactId>
-      <version>1.2</version>
-      <type>jar</type>
-      <exclusions>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xercesImpl</artifactId>
-          <!-- too old version -->
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>jaxen</groupId>
       <artifactId>jaxen</artifactId>
-      <version>1.0-FCS</version>
-      <!-- jaxen-core.jar jaxen-jdom.jar -->
-      <type>jar</type>
-      <exclusions>
-        <exclusion>
-          <groupId>xerces</groupId>
-          <artifactId>xercesImpl</artifactId>
-          <!-- too old version -->
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>lucene</groupId>
@@ -250,13 +179,6 @@
       <groupId>slide</groupId>
       <artifactId>slide-webdavservlet</artifactId>
       <version>2.2pre1.iwbuild5</version>
-      <type>jar</type>
-    </dependency>
-    <dependency>
-    <!-- new version dependency instead of old one(s)  -->
-      <groupId>xerces</groupId>
-      <artifactId>xercesImpl</artifactId>
-      <version>2.8.1</version>
       <type>jar</type>
     </dependency>
   </dependencies>
