@@ -64,8 +64,6 @@
     <dependency>
       <groupId>commons-transaction</groupId>
       <artifactId>commons-transaction</artifactId>
-      <version>1.2</version>
-      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>commons-httpclient</groupId>
