@@ -106,7 +106,7 @@
     <dependency>
       <groupId>poi</groupId>
       <artifactId>poi</artifactId>
-      <version>2.5-final-20040428</version>
+      <version>${poi-poi-version}</version>
       <type>jar</type>
     </dependency>
     <!-- saxpath is a part of jaxen now but has another package name -->
