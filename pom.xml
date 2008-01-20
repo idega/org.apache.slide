@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
   	<groupId>com.idega.block.platform</groupId>
@@ -11,7 +11,7 @@
   <groupId>com.idega.block.platform</groupId>
   <artifactId>org.apache.slide</artifactId>
   <name>Apache Jakarta Slide</name>
-  <version>2.2pre1.iwbuild5-SNAPSHOT</version>
+  <version>2.2pre1.iwbuild5</version>
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
   <scm>
@@ -21,6 +21,7 @@
     -->
     <connection>scm:cvs:ext:${user.name}@code.idega.com:/idega/cvs:${groupId}/${artifactId}/</connection>
     <developerConnection>scm:cvs:ext:${user.name}@code.idega.com:/idega/cvs:${groupId}/${artifactId}/</developerConnection>
+    <tag>org_apache_slide-2_2pre1_iwbuild5</tag>
   </scm>
   
   <developers>
