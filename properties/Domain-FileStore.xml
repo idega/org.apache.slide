@@ -613,7 +613,7 @@
 		<listener classname="org.apache.slide.extractor.PropertyExtractorTrigger" />
 		<listener classname="org.apache.slide.search.IndexTrigger">
 			<configuration>
-				<indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/" />
+				<indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/public" />
 			</configuration>
 		</listener>
 		
