@@ -451,7 +451,9 @@
 	<parameter name="auto-version-control">
 		true 
 	</parameter>
-	<parameter name="versioncontrol-exclude" />
+	<parameter name="versioncontrol-exclude" >
+		/files/cms/rss
+	</parameter>
 	<parameter name="checkout-fork">
 		forbidden 
 	</parameter>
@@ -460,9 +462,17 @@
 	</parameter>
 <!-- Extractor configuration -->
 	<extractors>
+<!--Text extractors-->
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/cms/article" />
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/public" />
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/dropbox" />
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/groups" />
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/shared" />
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/users" />
+		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files/forms" />
+<!--Text extractors-->
 <!--XML extractors-->
-		<!-- DISABLED because it does not work with our namespace for some reason...
-			extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
+		<!--extractor classname="org.apache.slide.extractor.SimpleXmlExtractor" uri="/files">
 			<configuration>
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="headline" xpath="/article/headline/text()" />
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="teaser" xpath="/article/teaser/text()" />
@@ -472,14 +482,19 @@
 				<instruction namespace="http://xmlns.idega.com/block/article/xml" property="comment" xpath="/article/comment/text()" />
 			</configuration>
 		</extractor-->
-		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files" />
+		<!--  Eiki, Idega: Now limiting to only articles in cms, unfortunately extractors in slide don't have an exclude parameter so we need specify all directories :/ -->
+		<!--Avoiding the cms folder un purpose, slows down themes uploading-->
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/cms/article" />
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/public" />
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/dropbox" />
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/groups" />
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/shared" />
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/users" />
+		<extractor classname="org.apache.slide.extractor.XmlContentExtractor" uri="/files/forms" />
 <!--XML extractors-->
 <!--PDF extractors-->
-	<extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files" />
+		<extractor classname="org.apache.slide.extractor.PDFExtractor" uri="/files/" />
 <!--PDF extractors-->
-<!--Text extractors-->
-		<extractor classname="org.apache.slide.extractor.TextContentExtractor" uri="/files" />
-<!--Text extractors-->
 <!--Office extractors-->
 		<extractor classname="org.apache.slide.extractor.OfficeExtractor" uri="/files">
 			<configuration>
@@ -491,10 +506,15 @@
 		<extractor classname="org.apache.slide.extractor.MSExcelExtractor" uri="/files" />
 		<extractor classname="org.apache.slide.extractor.MSPowerPointExtractor" uri="/files" />
 <!--Office extractors-->
-		
+
 	<!--Idega addons-->
 		<!--Image extractor-->
-		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files"/>
+		<!--Avoiding the cms folder on purpose, slows down themes uploading-->
+		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files/public" />
+		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files/dropbox" />
+		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files/groups" />
+		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files/shared" />
+		<extractor classname="com.idega.slide.extractor.ImagePropertyExtractor" uri="/files/users" />
 		<!--Image extractor-->
 		<!--Constant extractor, adds the all configured properties to all files that meet the criteria, COMMENTED OUT-->
 			<!--extractor classname="com.idega.slide.extractor.ConstantExtractor" uri="/files/public/images" content-type="application/pdf" >
@@ -504,7 +524,7 @@
 			</extractor-->
 		<!--Constant extractor-->
 	<!--Idega addons ends-->
-	
+
 	</extractors>
 <!-- Event configuration -->
 	<events>
@@ -526,7 +546,7 @@
 		<listener classname="org.apache.slide.extractor.PropertyExtractorTrigger" />
 		<listener classname="org.apache.slide.search.IndexTrigger">
 			<configuration>
-				<indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/public/" />
+				<indexer classname="org.apache.slide.search.LoggingIndexer" synchronous="false" uri="/files/" />
 			</configuration>
 		</listener>
 		
