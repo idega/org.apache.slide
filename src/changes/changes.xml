@@ -1,0 +1,56 @@
+    <document>
+  <properties>
+    <title>Org Apache Slide changes</title>
+    <author email='tryggvi@idega.com'>Tryggvi Larusson</author>
+  </properties>
+  <body>
+  	<release date='2009-01-27' description='First 4.1.x Release' version='4.1.0'>
+          <action type='add' dev='tryggvil'>First 4.1.x Release</action>
+        </release>
+        <release date='2007-03-20' version='2.2pre1.iwbuild5'>
+      <action type='update' dev='eiki'>
+    	Updated Lucene dependency to v. 2.1.0 because of Slide HEAD version.
+    	Updated commons-httpclient to v. 3.0.1
+    	Changed slide.properties in HEAD and this bundle to add org.apache.slide.binding=false, that was needed to make it work again.
+    	Rebuilt Slide from HEAD with those changes with JVM 1.4 and named it version: 2.2pre1.iwbuild5 
+    	YOU MUST REINDEX YOUR SITE FOR IT TO WORK AGAIN
+    </action>       
+    </release>
+  	<release date='2005-07-28' version='2.2b8'>
+      <action type='update' dev='eiki'>
+    	Updated Lucene dependency to v. 1.9.1 because of a memory leak in 1.4.1.
+    	Lucene v.1.9.1 is backward compatible to 1.4 and forward compatible to 2.0 	
+    </action>       
+    </release>
+	<release date='2006-06-30' version='2.2b7'>
+      <action type='update' dev='eiki'>
+      	Added property index definitions to enable case insensitive searching of standard properties.
+      </action>       
+    </release>
+    
+      <release date='2006-06-16' version='2.2b6'>
+      <action type='update' dev='tryggvil'>
+      	Declaration of version for including in ePlatform release 3.1
+      </action>
+      <action type='update' dev='tryggvil'>
+      	web.xml fragment included moved to com.idega.slide module wher
+      	WebDavServlet is extended with detecting store implementation.
+      </action>            
+    </release>
+  
+      <release date='2005-05-25' version='2.2pre1.iwbuild4.1'>
+      <action type='update' dev='tryggvil'>
+        Declaration of version for use with core 3.0.5,
+        running now with lucene version 1.2 
+        (prior 1.4.1 - not compatible with com.idega.block.websearch!)
+      </action>              
+    </release>
+    <release date='2005-04-06' version='2.2pre1.iwbuild3'>
+      <action type='update' dev='tryggvil'>
+        Declaration of version for use with core 3.0.4
+      </action>              
+    </release>
+
+  </body>
+</document>
+
