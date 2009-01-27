@@ -5,12 +5,12 @@
   <parent>
   	<groupId>com.idega.block.platform</groupId>
   	<artifactId>com.idega.block.platform</artifactId>
-  	<version>4.1.0</version>
+  	<version>4.1.1-SNAPSHOT</version>
   </parent>
   <packaging>jar</packaging>
   <groupId>com.idega.block.platform</groupId>
   <artifactId>org.apache.slide</artifactId>
-  <version>4.1.0</version>
+  <version>4.1.1-SNAPSHOT4.1.1-SNAPSHOT</version>
   <name>Apache Jakarta Slide</name>
   <inceptionYear>2004</inceptionYear>
   <description>Jakarta Slide WebDAV Server</description>
@@ -22,7 +22,6 @@
     <connection>scm:cvs:ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.platform/org.apache.slide/</connection>
     <developerConnection>scm:cvs:ext:idegaweb@code.idega.com:/idega/cvs:com.idega.block.platform/org.apache.slide/</developerConnection>
     -->
-    <tag>com_idega_block_platform-4_1_0</tag>
   </scm>
   
   <developers>
