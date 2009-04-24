@@ -92,10 +92,6 @@
       <artifactId>ehcache</artifactId>
     </dependency>
     <dependency>
-      <groupId>jaxen</groupId>
-      <artifactId>jaxen</artifactId>
-    </dependency>
-    <dependency>
       <groupId>lucene</groupId>
       <artifactId>lucene-core</artifactId>
       <version>2.1.0</version>
@@ -113,9 +109,6 @@
       <version>${poi-poi-version}</version>
       <type>jar</type>
     </dependency>
-    <!-- saxpath is a part of jaxen now but has another package name -->
-    <!-- Slide -->
-    <!--  -->
     <dependency>
       <groupId>org.textmining</groupId>
       <artifactId>tm-extractors</artifactId>
@@ -132,12 +125,6 @@
       <groupId>geronimo-spec</groupId>
       <artifactId>geronimo-spec-jta</artifactId>
       <version>1.0-M1</version>
-      <type>jar</type>
-    </dependency>
-    <dependency>
-      <groupId>saxpath</groupId>
-      <artifactId>saxpath</artifactId>
-      <version>1.0-FCS</version>
       <type>jar</type>
     </dependency>
     <!-- already included in core -->
