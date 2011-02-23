@@ -106,8 +106,6 @@
     <dependency>
       <groupId>org.apache.poi</groupId>
       <artifactId>poi</artifactId>
-      <version>${org.apache.poi-poi-version}</version>
-      <type>jar</type>
     </dependency>
     <dependency>
       <groupId>org.textmining</groupId>
