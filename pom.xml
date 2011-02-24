@@ -108,12 +108,6 @@
       <artifactId>poi</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.textmining</groupId>
-      <artifactId>tm-extractors</artifactId>
-      <version>0.4</version>
-      <type>jar</type>
-    </dependency>
-    <dependency>
       <groupId>de.zeigermann.xml</groupId>
       <artifactId>xml-im-exporter</artifactId>
       <version>1.1</version>
